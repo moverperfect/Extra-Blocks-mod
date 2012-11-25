@@ -36,6 +36,7 @@ public class ExtraBlocksMain {
 		public static final Block copperBlock = new BlockCopperBlock(1501,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
 		public static final Block tinOre = new BlockTinOre(1508,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 		public static final Block tinBlock = new BlockCopperBlock(1509,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
+		public static final Block redstoneBlock = new BlockCopperBlock(1516,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
 		
 		// Copper Ingot
 		public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
@@ -48,7 +49,7 @@ public class ExtraBlocksMain {
 		public static final Item copperHoe = new ItemHoe(1507, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
 		
 		// Tin Items
-		public static final Item tinIngot = new ItemTinIngot(15010).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
+		public static final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
 		
 		
 	// Game registry/ Language registry
@@ -62,6 +63,7 @@ public class ExtraBlocksMain {
 		GameRegistry.registerBlock(copperBlock);
 		GameRegistry.registerBlock(tinOre);
 		GameRegistry.registerBlock(tinBlock);
+		GameRegistry.registerBlock(redstoneBlock);
 		
 		// Registering the custom world generation
 		GameRegistry.registerWorldGenerator(new extraBlocksWorldGen());
@@ -71,6 +73,7 @@ public class ExtraBlocksMain {
 		LanguageRegistry.addName(copperBlock, "Copper Block");
 		LanguageRegistry.addName(tinOre, "Tin Ore");
 		LanguageRegistry.addName(tinBlock, "Tin Block");
+		LanguageRegistry.addName(redstoneBlock, "Redstone Block");
 		
 		// Registering the name of the copper Items
 		LanguageRegistry.addName(copperIngot, "Copper Ingot");
@@ -86,8 +89,11 @@ public class ExtraBlocksMain {
 		// Adding the recipe for making the blocks and 'unmaking' the blocks
 		GameRegistry.addRecipe(new ItemStack (copperBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), copperIngot});
 		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), tinIngot});
-		GameRegistry.addRecipe(new ItemStack (copperIngot), new Object[]{"#","","",Character.valueOf('#'), copperBlock});
-		GameRegistry.addRecipe(new ItemStack (tinIngot), new Object[]{"#","","",Character.valueOf('#'), tinBlock});
+		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
+		GameRegistry.addShapelessRecipe(new ItemStack (copperIngot,9), new Object[]{copperBlock});
+		GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
+		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
+
 		
 		// Adding the recipe for making the copper tools
 		GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
