@@ -1,4 +1,4 @@
-package moverperfect.ExtraBlocks;
+package ExtraBlocks.common;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -24,8 +24,8 @@ import net.minecraft.src.ModLoader;
 
 public class ExtraBlocksMain {
 	
-	// @SidedProxy(clientSide = "net.minecraft.CopperMod.src.ClientProxy", serverSide = "net.minecraft.CopperMod.src.CommonProxy")
-	
+	@SidedProxy(clientSide = "ExtraBlocks.client.ClientProxyExtraBlocks", serverSide = "ExtraBlocks.common.CommonProxyExtraBlocks")
+	public static CommonProxyExtraBlocks proxy;	
 	
 	@Instance("extrablocks")
 	public static ExtraBlocksMain instance;
@@ -50,6 +50,8 @@ public class ExtraBlocksMain {
 		
 	@Init
 	public void load(FMLInitializationEvent event){
+		
+		proxy.registerRenderThings();
 		
 		// Registering the Blocks
 		GameRegistry.registerBlock(copperOre);

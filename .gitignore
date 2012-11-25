@@ -16,7 +16,8 @@
 /src/common/*
 !/src/common/mcmod.info
 !/src/common/SP.png
-!/src/common/moverperfect/
+!/src/common/ExtraBlocks/
+!/src/minecraft/ExtraBlocks/
 
 *.bat
 *.sh

@@ -1,4 +1,4 @@
-package moverperfect.ExtraBlocks;
+package ExtraBlocks.common;
 
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;

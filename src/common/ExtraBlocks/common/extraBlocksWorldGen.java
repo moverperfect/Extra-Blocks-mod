@@ -1,4 +1,4 @@
-package moverperfect.ExtraBlocks;
+package ExtraBlocks.common;
 
 import java.util.Random;
 
