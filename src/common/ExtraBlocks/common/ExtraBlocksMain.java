@@ -31,14 +31,16 @@ public class ExtraBlocksMain {
 	public static ExtraBlocksMain instance;
 	
 	
-	// Blocks
+		// Blocks
 		public static final Block copperOre = new BlockCopperOre(1500,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
 		public static final Block copperBlock = new BlockCopperBlock(1501,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
 		public static final Block tinOre = new BlockTinOre(1508,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 		public static final Block tinBlock = new BlockCopperBlock(1509,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
 		
-		// Copper Items
+		// Copper Ingot
 		public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
+		
+		// Copper tools
 		public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
 		public static final Item copperShovel = new ItemSpade(1504, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
 		public static final Item copperPickaxe = new ItemPickaxe(1505, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
@@ -48,6 +50,8 @@ public class ExtraBlocksMain {
 		// Tin Items
 		public static final Item tinIngot = new ItemTinIngot(15010).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
 		
+		
+	// Game registry/ Language registry
 	@Init
 	public void load(FMLInitializationEvent event){
 		
@@ -97,11 +101,14 @@ public class ExtraBlocksMain {
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 		
 	}
+	
+	// Say i am initialising
 	@PreInit
 	public void init(FMLPreInitializationEvent preEvent) {
 		System.out.println("ExtraBlocks Initializing");
 	}
 	
+	// Say i have been initialised
 	@PostInit
 	public void postInit(FMLPostInitializationEvent event) {
 		System.out.println("ExtraBlocks Initialized");
