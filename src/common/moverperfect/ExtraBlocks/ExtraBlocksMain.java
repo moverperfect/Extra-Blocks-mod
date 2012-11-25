@@ -1,6 +1,5 @@
 package moverperfect.ExtraBlocks;
 
-import telinc.telincCore.TelincCoreMain;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -25,7 +24,7 @@ import net.minecraft.src.ModLoader;
 
 public class ExtraBlocksMain {
 	
-	@SidedProxy(clientSide = "net.minecraft.CopperMod.src.ClientProxy", serverSide = "net.minecraft.CopperMod.src.CommonProxy")
+	// @SidedProxy(clientSide = "net.minecraft.CopperMod.src.ClientProxy", serverSide = "net.minecraft.CopperMod.src.CommonProxy")
 	
 	
 	@Instance("extrablocks")
@@ -48,7 +47,7 @@ public class ExtraBlocksMain {
 		*/
 		// Tin Items
 		public static final Item tinIngot = new ItemTinIngot(15010).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
-	
+		
 	@Init
 	public void load(FMLInitializationEvent event){
 		
