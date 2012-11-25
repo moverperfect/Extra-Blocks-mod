@@ -97,7 +97,7 @@ public class ExtraBlocksMain {
 	}
 	@PreInit
 	public void init(FMLPreInitializationEvent preEvent) {
-		
+		System.out.println("ExtraBlocks Initializing");
 	}
 	
 	@PostInit
