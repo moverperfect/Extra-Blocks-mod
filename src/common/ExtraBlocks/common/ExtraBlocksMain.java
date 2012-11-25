@@ -39,11 +39,11 @@ public class ExtraBlocksMain {
 		
 		// Copper Items
 		public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
-		public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
-		public static final Item copperShovel = new ItemSpade(1504, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
-		public static final Item copperPickaxe = new ItemPickaxe(1505, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
-		public static final Item copperAxe = new ItemAxe(1506, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
-		public static final Item copperHoe = new ItemHoe(1507, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
+		public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+		public static final Item copperShovel = new ItemSpade(1504, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
+		public static final Item copperPickaxe = new ItemPickaxe(1505, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
+		public static final Item copperAxe = new ItemAxe(1506, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
+		public static final Item copperHoe = new ItemHoe(1507, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
 		
 		// Tin Items
 		public static final Item tinIngot = new ItemTinIngot(15010).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
