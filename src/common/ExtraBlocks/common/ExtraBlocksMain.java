@@ -39,12 +39,12 @@ public class ExtraBlocksMain {
 		
 		// Copper Items
 		public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
-		/** public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+		public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
 		public static final Item copperShovel = new ItemSpade(1504, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
 		public static final Item copperPickaxe = new ItemPickaxe(1505, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
 		public static final Item copperAxe = new ItemAxe(1506, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
 		public static final Item copperHoe = new ItemHoe(1507, EnumToolMaterial.COPPER).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
-		*/
+		
 		// Tin Items
 		public static final Item tinIngot = new ItemTinIngot(15010).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
 		
@@ -70,12 +70,12 @@ public class ExtraBlocksMain {
 		
 		// Registering the name of the copper Items
 		LanguageRegistry.addName(copperIngot, "Copper Ingot");
-		/**LanguageRegistry.addName(copperSword,"Copper Sword");
+		LanguageRegistry.addName(copperSword,"Copper Sword");
 		LanguageRegistry.addName(copperShovel,"Copper Shovel");
 		LanguageRegistry.addName(copperPickaxe,"Copper Pickaxe");
 		LanguageRegistry.addName(copperAxe,"Copper Axe");
 		LanguageRegistry.addName(copperHoe,"Copper Hoe");
-		*/
+		
 		// Registering the name of the tin Items
 		LanguageRegistry.addName(tinIngot,"Tin Ingot");
 		
@@ -86,12 +86,12 @@ public class ExtraBlocksMain {
 		GameRegistry.addRecipe(new ItemStack (tinIngot), new Object[]{"#","","",Character.valueOf('#'), tinBlock});
 		
 		// Adding the recipe for making the copper tools
-		/**GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
+		GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
 		GameRegistry.addRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
 		GameRegistry.addRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
 		GameRegistry.addRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
 		GameRegistry.addRecipe(new ItemStack (copperHoe),new Object[]{"##","s","s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
-		*/
+		
 		// Registering the smelting to make the ingot
 		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
