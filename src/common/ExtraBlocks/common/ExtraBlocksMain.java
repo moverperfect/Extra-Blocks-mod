@@ -18,6 +18,7 @@ import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.ModLoader;
+import net.minecraftforge.oredict.OreDictionary;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 @Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.1.0")
@@ -89,7 +90,7 @@ public class ExtraBlocksMain {
 		// Adding the recipe for making the blocks and 'unmaking' the blocks
 		GameRegistry.addRecipe(new ItemStack (copperBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), copperIngot});
 		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), tinIngot});
-		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
+		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
 		GameRegistry.addShapelessRecipe(new ItemStack (copperIngot,9), new Object[]{copperBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
@@ -105,6 +106,16 @@ public class ExtraBlocksMain {
 		// Registering the smelting to make the ingot
 		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
+		
+		/*
+		OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
+		OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
+		OreDictionary.registerOre("oreCopper", new ItemStack(copperOre));
+		OreDictionary.registerOre("oreTin", new ItemStack(tinOre));
+		OreDictionary.registerOre("blockRedstone", new ItemStack(redstoneBlock));
+		OreDictionary.registerOre("blockCopper", new ItemStack(copperBlock));
+		OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
+		*/
 		
 	}
 	
