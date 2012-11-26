@@ -39,7 +39,7 @@ public class ExtraBlocksMain {
 		public static final Block tinBlock = new BlockCopperBlock(1509,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
 		
 		public static final Block redstoneBlock = new BlockCopperBlock(1516,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
-		public static final Block coalBlock = new BlockCopperBlock(1517,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations);
+		public static final Block coalBlock = new BlockCoalBlock(1517,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations);
 		
 		// Copper Ingot
 		public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
@@ -118,7 +118,8 @@ public class ExtraBlocksMain {
 		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 		
-		/*
+		
+		/* TODO Add ores to ore dictionary
 		OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
 		OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
 		OreDictionary.registerOre("oreCopper", new ItemStack(copperOre));
@@ -128,7 +129,21 @@ public class ExtraBlocksMain {
 		OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
 		*/
 		
+		
+		
 	}
+	
+	/* TODO add coal block as fuel
+	public int addFuel(int par1, int par2)
+	{
+		System.out.println("Im here!!!!!!!!");
+	if(par1 == coalBlock.blockID)
+	{
+	return 12800;
+	}
+	         return 0;
+	}
+	*/
 	
 	// Say i am initialising
 	@PreInit
