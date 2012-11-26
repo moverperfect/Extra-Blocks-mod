@@ -22,7 +22,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.1.0")
+@Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.2.0")
 
 public class ExtraBlocksMain {
 	
@@ -45,9 +45,17 @@ public class ExtraBlocksMain {
 	public static int copperAxeID;
 	public static int copperHoeID;
 	public static int tinIngotID;
+	public static int tinSwordID;
+	public static int tinShovelID;
+	public static int tinPickaxeID;
+	public static int tinAxeID;
+	public static int tinHoeID;
+	
+	public static boolean copperOreBool;
 		
+	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
-	// TODO Add tin tools and Enum
+	static EnumToolMaterial EnumToolMaterialTin = EnumHelper.addToolMaterial("TIN", 2, 300, 7.5F, 2, 14);
 	
 	// Game registry/ Language registry
 	@Init
@@ -73,9 +81,15 @@ public class ExtraBlocksMain {
 		final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
 		final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
 			
-		// Tin Items
+		// Tin Ingot
 		final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
-		System.out.println("Now here");
+		
+		// Tin tools
+		final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
+		final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(8,0);
+		final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(9,0);
+		final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(10,0);
+		final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(11,0);
 
 		proxy.registerRenderThings();
 		
@@ -141,6 +155,9 @@ public class ExtraBlocksMain {
 		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 		
+		// Register the fuel handler
+		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
+				
 		/* TODO Add ores to ore dictionary
 		OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
 		OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
@@ -152,19 +169,7 @@ public class ExtraBlocksMain {
 		*/
 	}
 	
-	/* TODO add coal block as fuel
-	public int addFuel(int par1, int par2)
-	{
-		System.out.println("Im here!!!!!!!!");
-	if(par1 == coalBlock.blockID)
-	{
-	return 12800;
-	}
-	         return 0;
-	}
-	*/
-	
-	// Say i am initialising
+	// Say i am initialising and sort out config files
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("ExtraBlocks Loading config file");
@@ -174,21 +179,31 @@ public class ExtraBlocksMain {
 		
 		copperOreID = config.getBlock("Copper Ore", 1500).getInt();
 		copperBlockID = config.getBlock("Copper Block", 1501).getInt();
+		
 		copperIngotID = config.getItem("Copper Ingot", 1502).getInt();
 		copperSwordID = config.getItem("Copper Sword", 1503).getInt();
 		copperShovelID = config.getItem("Copper Shovel", 1504).getInt();
 		copperPickaxeID = config.getItem("Copper Pickaxe", 1505).getInt();
 		copperAxeID = config.getItem("Copper Axe", 1506).getInt();
 		copperHoeID = config.getItem("Copper Hoe", 1507).getInt();
+		
 		tinOreID = config.getBlock("Tin Ore", 1508).getInt();
 		tinBlockID = config.getBlock("Tin Block", 1509).getInt();
+		
 		tinIngotID = config.getItem("Tin Ingot", 1510).getInt();
-		// TODO All tin tools
+		tinSwordID = config.getItem("Tin Sword", 1511).getInt();
+		tinShovelID = config.getItem("Tin Shovel", 1512).getInt();
+		tinPickaxeID = config.getItem("Tin Pickaxe", 1513).getInt();
+		tinAxeID = config.getItem("Tin Axe", 1514).getInt();
+		tinHoeID = config.getItem("Tin Hoe", 1515).getInt();
+		
 		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
 		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
 		
 		// TODO Add ability to not have the ores/blocks whatever
 		
+		// copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper Ore", true).getBoolean(true);
+
 		config.save();
 	}
 	
@@ -198,3 +213,4 @@ public class ExtraBlocksMain {
 		System.out.println("ExtraBlocks Initialized");
 	}
 }
+
