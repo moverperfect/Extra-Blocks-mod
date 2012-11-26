@@ -98,14 +98,14 @@ public class ExtraBlocksMain {
 		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), tinIngot});
 		
 		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
-		GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.coal});
+		GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
 		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack (copperIngot,9), new Object[]{copperBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
-		GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,9), new Object[]{coalBlock});
+		GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
 		
 		// Adding the recipe for making the copper tools
 		GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
