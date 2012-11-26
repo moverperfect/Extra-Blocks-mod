@@ -1,6 +1,11 @@
 package ExtraBlocks.common;
 
-import java.awt.Event;
+import net.minecraft.src.Block;
+import net.minecraft.src.CreativeTabs;
+import net.minecraft.src.EnumToolMaterial;
+import net.minecraft.src.Item;
+import net.minecraft.src.ItemStack;
+import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -13,15 +18,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import net.minecraft.src.Block;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.EnumToolMaterial;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.ModLoader;
-import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.common.Configuration;
-import net.minecraftforge.common.EnumHelper;
 
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -36,37 +32,62 @@ public class ExtraBlocksMain {
 	public static ExtraBlocksMain instance;
 	
 	public static int copperOreID;
+	public static int copperBlockID;
+	public static int tinOreID;
+	public static int tinBlockID;
+	public static int redstoneBlockID;
+	public static int coalBlockID;
+	public static int copperIngotID;
+	public static int copperSwordID;
+	public static int copperShovelID;
+	public static int copperPickaxeID;
+	public static int copperAxeID;
+	public static int copperHoeID;
+	public static int tinIngotID;
 	
+		
 	// TODO Add the EnumMaterial
 	// static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial(COPPER, harvestLevel, maxUses, efficiency, damage, enchantability);
 	
-	// Blocks
-	public static final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block copperBlock = new BlockCopperBlock(1501,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
-	public static final Block tinOre = new BlockTinOre(1508,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
-	public static final Block tinBlock = new BlockCopperBlock(1509,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
-	
-	public static final Block redstoneBlock = new BlockCopperBlock(1516,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
-	public static final Block coalBlock = new BlockCoalBlock(1517,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations);
-	
-	// Copper Ingot
-	public static final Item copperIngot = new ItemCopperIngot(1502).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
-	
-	// Copper tools
-	public static final Item copperSword = new ItemSword(1503, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
-	public static final Item copperShovel = new ItemSpade(1504, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
-	public static final Item copperPickaxe = new ItemPickaxe(1505, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
-	public static final Item copperAxe = new ItemAxe(1506, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
-	public static final Item copperHoe = new ItemHoe(1507, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
-		
-	// Tin Items
-	public static final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
-		
+			
 		
 	// Game registry/ Language registry
 	@Init
 	public void load(FMLInitializationEvent event){
 		
+		// Blocks
+		System.out.println("Im here");
+		final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
+		final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
+		final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
+		System.out.println("2 here");
+		System.out.println(tinBlockID);
+
+		final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
+		System.out.println("4 here");
+
+		// Non-metal blocks
+		final Block redstoneBlock = new BlockRedstoneBlock(redstoneBlockID,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
+		System.out.println("5 here");
+
+		final Block coalBlock = new BlockCoalBlock(coalBlockID,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations);
+		System.out.println("3 here");
+
+		
+		// Copper Ingot
+		final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
+		
+		// Copper tools
+		final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+		final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
+		final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
+		final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
+		final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
+			
+		// Tin Items
+		final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
+		System.out.println("Now here");
+
 		proxy.registerRenderThings();
 		
 		// Registering the Blocks
@@ -161,12 +182,25 @@ public class ExtraBlocksMain {
 	// Say i am initialising
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		System.out.println("ExtraBlocks Initializing");
+		System.out.println("ExtraBlocks Loading config file");
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		
 		config.load();
 		
-		copperOreID = config.getBlock("copper Ore", 1500).getInt();
+		copperOreID = config.getBlock("Copper Ore", 1500).getInt();
+		copperBlockID = config.getBlock("Copper Block", 1501).getInt();
+		copperIngotID = config.getItem("Copper Ingot", 1502).getInt();
+		copperSwordID = config.getItem("Copper Sword", 1503).getInt();
+		copperShovelID = config.getItem("Copper Shovel", 1504).getInt();
+		copperPickaxeID = config.getItem("Copper Pickaxe", 1505).getInt();
+		copperAxeID = config.getItem("Copper Axe", 1506).getInt();
+		copperHoeID = config.getItem("Copper Hoe", 1507).getInt();
+		tinOreID = config.getBlock("Tin Ore", 1508).getInt();
+		tinBlockID = config.getBlock("Tin Block", 1509).getInt();
+		tinIngotID = config.getItem("Tin Ingot", 1510).getInt();
+		// TODO All tin tools
+		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
+		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
 		
 		config.save();
 	}

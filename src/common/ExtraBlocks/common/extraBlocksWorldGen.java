@@ -28,7 +28,7 @@ public class extraBlocksWorldGen implements IWorldGenerator {
                 		int Xcoord = blockX + random.nextInt(16);
                 		int Ycoord = random.nextInt(60);
                 		int Zcoord = blockZ + random.nextInt(16);
-                		(new WorldGenMinable(ExtraBlocksMain.copperOre.blockID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
+                		(new WorldGenMinable(ExtraBlocksMain.copperOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
                 		}
                 	
                 	for (int i = 1; i < 10;i++) {
@@ -36,7 +36,7 @@ public class extraBlocksWorldGen implements IWorldGenerator {
                 		int Xcoord = blockX + random.nextInt(16);
                 		int Ycoord = random.nextInt(60);
                 		int Zcoord = blockZ + random.nextInt(16);
-                		(new WorldGenMinable(ExtraBlocksMain.tinOre.blockID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
+                		(new WorldGenMinable(ExtraBlocksMain.tinOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
                 		}
                 	}
                 }
