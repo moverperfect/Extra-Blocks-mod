@@ -6,6 +6,7 @@ import net.minecraft.src.EnumToolMaterial;
 import net.minecraft.src.Item;
 import net.minecraft.src.ItemStack;
 import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.EnumHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -44,45 +45,33 @@ public class ExtraBlocksMain {
 	public static int copperAxeID;
 	public static int copperHoeID;
 	public static int tinIngotID;
-	
 		
-	// TODO Add the EnumMaterial
-	// static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial(COPPER, harvestLevel, maxUses, efficiency, damage, enchantability);
+	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
+	// TODO Add tin tools and Enum
 	
-			
-		
 	// Game registry/ Language registry
 	@Init
 	public void load(FMLInitializationEvent event){
 		
 		// Blocks
-		System.out.println("Im here");
 		final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
 		final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
 		final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
-		System.out.println("2 here");
-		System.out.println(tinBlockID);
-
 		final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
-		System.out.println("4 here");
 
 		// Non-metal blocks
 		final Block redstoneBlock = new BlockRedstoneBlock(redstoneBlockID,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
-		System.out.println("5 here");
-
 		final Block coalBlock = new BlockCoalBlock(coalBlockID,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations);
-		System.out.println("3 here");
-
 		
 		// Copper Ingot
 		final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
 		
 		// Copper tools
-		final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
-		final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
-		final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
-		final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
-		final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterial.IRON).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
+		final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+		final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
+		final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
+		final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
+		final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
 			
 		// Tin Items
 		final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
@@ -152,7 +141,6 @@ public class ExtraBlocksMain {
 		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
 		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 		
-		
 		/* TODO Add ores to ore dictionary
 		OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
 		OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
@@ -162,9 +150,6 @@ public class ExtraBlocksMain {
 		OreDictionary.registerOre("blockCopper", new ItemStack(copperBlock));
 		OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
 		*/
-		
-		
-		
 	}
 	
 	/* TODO add coal block as fuel
@@ -201,6 +186,8 @@ public class ExtraBlocksMain {
 		// TODO All tin tools
 		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
 		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
+		
+		// TODO Add ability to not have the ores/blocks whatever
 		
 		config.save();
 	}
