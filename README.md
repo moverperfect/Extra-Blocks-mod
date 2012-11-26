@@ -5,7 +5,7 @@
 </ul></p>
 
 <p>Updates: 
-0.3.0
+<p>0.3.0</p>
 	<ul><li>Config file</li>
 	<li>Special enummaterial for copper and tin</li>
 	<li>Created tin tools</li>
