@@ -14,5 +14,8 @@ public class BlockRedstoneBlock extends Block {
 	public String getTextureFile(){
 		return "/textures/Blocks.png";
 	}
+	public boolean canProvidePower() {
+		return true;
+	}
 
 }
