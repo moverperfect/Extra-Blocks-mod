@@ -5,7 +5,9 @@
 </ul></p>
 
 <p>Updates: 
-<p>0.3.0</p>
+<p>0.2.1</p>
+	<ul><li>Added missing textures</li></ul>
+<p>0.2.0</p>
 	<ul><li>Config file</li>
 	<li>Special enummaterial for copper and tin</li>
 	<li>Created tin tools</li>
@@ -13,6 +15,6 @@
 	<li>Added coal block</li>
 	<li>Added proxies</li>
 	<li>Added a fuel handler</li></ul>
-0.2.0
+<p>0.1.0</p>
 	<ul><li>Everything before 0.3.0 (Didnt track changes)</li></ul>
 </p>
