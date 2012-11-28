@@ -22,7 +22,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.2.0")
+@Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.2.1")
 
 public class ExtraBlocksMain {
 	
