@@ -52,6 +52,8 @@ public class ExtraBlocksMain {
 	public static int tinHoeID;
 	
 	public static boolean copperOreBool;
+	public static boolean tinOreBool;
+	public static boolean seedsToBreadBool;
 		
 	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
@@ -63,44 +65,61 @@ public class ExtraBlocksMain {
 	@Init
 	public void load(FMLInitializationEvent event){
 		
+		
+		
 		// Blocks
-		final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
-		final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
-		final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
-		final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
-
+		if (copperOreBool){	final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
+							final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
+							GameRegistry.registerBlock(copperOre);
+							GameRegistry.registerBlock(copperBlock);
+							LanguageRegistry.addName(copperOre, "Copper Ore");
+							LanguageRegistry.addName(copperBlock, "Copper Block");
+							final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
+							final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+							final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
+							final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
+							final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
+							final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
+							LanguageRegistry.addName(copperIngot, "Copper Ingot");
+							LanguageRegistry.addName(copperSword,"Copper Sword");
+							LanguageRegistry.addName(copperShovel,"Copper Shovel");
+							LanguageRegistry.addName(copperPickaxe,"Copper Pickaxe");
+							LanguageRegistry.addName(copperAxe,"Copper Axe");
+							LanguageRegistry.addName(copperHoe,"Copper Hoe");
+							GameRegistry.addRecipe(new ItemStack (copperBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), copperIngot});
+							GameRegistry.addShapelessRecipe(new ItemStack (copperIngot,9), new Object[]{copperBlock});
+							GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
+							GameRegistry.addRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
+							GameRegistry.addRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
+							GameRegistry.addRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
+							GameRegistry.addRecipe(new ItemStack (copperHoe),new Object[]{"##","s","s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
+							GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
+		};
+		if (tinOreBool){	final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
+							final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
+							GameRegistry.registerBlock(tinOre);
+							GameRegistry.registerBlock(tinBlock);
+							LanguageRegistry.addName(tinOre, "Tin Ore");
+							LanguageRegistry.addName(tinBlock, "Tin Block");
+							final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
+							final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
+							final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(8,0);
+							final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(9,0);
+							final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(10,0);
+							final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(11,0);
+							LanguageRegistry.addName(tinIngot,"Tin Ingot");
+							GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), tinIngot});
+							GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
+							GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
+		};
+							
 		// Non-metal blocks
 		final Block redstoneBlock = new BlockRedstoneBlock(redstoneBlockID,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
 		final Block coalBlock = new BlockCoalBlock(coalBlockID,5).setHardness(4F).setResistance(10F).setBlockName("Coal Block").setCreativeTab(CreativeTabs.tabDecorations).setLightValue(14);
 		
-		// Copper Ingot
-		final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
-		
-		// Copper tools
-		final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
-		final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
-		final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
-		final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
-		final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
-			
-		// Tin Ingot
-		final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
-		
-		// Tin tools
-		final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
-		final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(8,0);
-		final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(9,0);
-		final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(10,0);
-		final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(11,0);
-
 		proxy.registerRenderThings();
 		
 		// Registering the Blocks
-		GameRegistry.registerBlock(copperOre);
-		GameRegistry.registerBlock(copperBlock);
-		GameRegistry.registerBlock(tinOre);
-		GameRegistry.registerBlock(tinBlock);
-		
 		GameRegistry.registerBlock(redstoneBlock);
 		GameRegistry.registerBlock(coalBlock);
 		
@@ -108,54 +127,22 @@ public class ExtraBlocksMain {
 		GameRegistry.registerWorldGenerator(new extraBlocksWorldGen());
 		
 		// Registering the name of the Blocks
-		LanguageRegistry.addName(copperOre, "Copper Ore");
-		LanguageRegistry.addName(copperBlock, "Copper Block");
-		LanguageRegistry.addName(tinOre, "Tin Ore");
-		LanguageRegistry.addName(tinBlock, "Tin Block");
-		
 		LanguageRegistry.addName(redstoneBlock, "Redstone Block");
 		LanguageRegistry.addName(coalBlock, "Coal Block");
 		
-		// Registering the name of the copper Items
-		LanguageRegistry.addName(copperIngot, "Copper Ingot");
-		LanguageRegistry.addName(copperSword,"Copper Sword");
-		LanguageRegistry.addName(copperShovel,"Copper Shovel");
-		LanguageRegistry.addName(copperPickaxe,"Copper Pickaxe");
-		LanguageRegistry.addName(copperAxe,"Copper Axe");
-		LanguageRegistry.addName(copperHoe,"Copper Hoe");
-		
-		// Registering the name of the tin Items
-		LanguageRegistry.addName(tinIngot,"Tin Ingot");
 		
 		// Adding the recipe for making the blocks and 'unmaking' the blocks
-		// Metal Blocks
-		GameRegistry.addRecipe(new ItemStack (copperBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), copperIngot});
-		GameRegistry.addRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), tinIngot});
 		
 		// Non-metal blocks
 		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
 		GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
+		
 		// This may seem a bit OP but it fits in with EE's EMC value's
 		GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});
-		
-		// Uncrafting metal blocks
-		GameRegistry.addShapelessRecipe(new ItemStack (copperIngot,9), new Object[]{copperBlock});
-		GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
 		
 		// Uncrafting no-metal blocks
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
-		
-		// Adding the recipe for making the copper tools
-		GameRegistry.addRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
-		GameRegistry.addRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
-		GameRegistry.addRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), copperIngot, ('s'),Item.stick});
-		GameRegistry.addRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
-		GameRegistry.addRecipe(new ItemStack (copperHoe),new Object[]{"##","s","s",Character.valueOf('#'), copperIngot, ('s'), Item.stick});
-		
-		// Registering the smelting to make the ingot
-		GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
-		GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 		
 		// Register the fuel handler
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
@@ -204,7 +191,10 @@ public class ExtraBlocksMain {
 		
 		// TODO Add ability to not have the ores/blocks whatever
 		
-		// copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper Ore", true).getBoolean(true);
+		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper", true).getBoolean(true);
+		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin", true).getBoolean(true);
+		
+		seedsToBreadBool = config.get(Configuration.CATEGORY_GENERAL, "Enable 9 seeds to 2 bread recipe", true).getBoolean(true);
 
 		config.save();
 	}

@@ -1,7 +1,9 @@
 <p>This mod is just a bit of fun, if you really want to use it then a download is provided. I am just creating and updating this to learn.</p>
 
 <p>Plans:
-	<ul><li>Ability to disable ore's and blocks</li>
+	<ul>
+	<li>Ability to disable ore's and blocks</li>
+	<li>Check for updates and inform user of an update</li>
 </ul></p>
 
 <p>Updates: 

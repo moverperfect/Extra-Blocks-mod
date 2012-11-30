@@ -20,29 +20,27 @@ public class extraBlocksWorldGen implements IWorldGenerator {
 	
 	
 	public void generateSurface(World world, Random random, int blockX, int blockZ){
-        
-        {
-                {
-                	for (int i = 1; i < 10;i++) {
-                		
-                		int Xcoord = blockX + random.nextInt(16);
-                		int Ycoord = random.nextInt(60);
-                		int Zcoord = blockZ + random.nextInt(16);
-                		(new WorldGenMinable(ExtraBlocksMain.copperOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
-                		}
-                	
-                	for (int i = 1; i < 10;i++) {
-                		
-                		int Xcoord = blockX + random.nextInt(16);
-                		int Ycoord = random.nextInt(60);
-                		int Zcoord = blockZ + random.nextInt(16);
-                		(new WorldGenMinable(ExtraBlocksMain.tinOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
-                		}
-                	}
-                }
-
-
-}
+		{
+			if (ExtraBlocksMain.copperOreBool) {
+				for (int i = 1; i < 10;i++) {
+					
+					int Xcoord = blockX + random.nextInt(16);
+					int Ycoord = random.nextInt(60);
+					int Zcoord = blockZ + random.nextInt(16);
+					(new WorldGenMinable(ExtraBlocksMain.copperOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
+				}
+			};
+			if (ExtraBlocksMain.copperOreBool) {
+				for (int i = 1; i < 10;i++) {
+					
+					int Xcoord = blockX + random.nextInt(16);
+					int Ycoord = random.nextInt(60);
+					int Zcoord = blockZ + random.nextInt(16);
+					(new WorldGenMinable(ExtraBlocksMain.tinOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
+				}
+			}
+		}
+}	
 	public void generateNether(World world, Random random, int blockX, int blockZ){
         
         
