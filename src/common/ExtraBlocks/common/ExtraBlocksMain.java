@@ -24,7 +24,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-// TODO Change when things are disabled
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 @Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.2.2")
 
@@ -58,6 +57,14 @@ public class ExtraBlocksMain {
 	public static boolean copperOreBool;
 	public static boolean tinOreBool;
 	public static boolean seedsToBreadBool;
+	public static boolean copperToolsBool;
+	public static boolean tinToolsBool;
+	
+	public static Item copperSwordRec;
+	public static Item copperShovelRec;
+	public static Item copperPickaxeRec;
+	public static Item copperAxeRec;
+	public static Item copperHoeRec;
 		
 	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
@@ -104,18 +111,26 @@ public class ExtraBlocksMain {
 			
 			CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (copperIngot,9), new Object[]{"blockCopper"}));
 			
-		
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
-			
 			GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
-};
+			
+			copperSwordRec = copperSword;
+			copperShovelRec = copperShovel;
+			copperPickaxeRec = copperPickaxe;
+			copperAxeRec = copperAxe;
+			copperHoeRec = copperHoe;
+		};
+
+		if (copperToolsBool) {
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSwordRec), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovelRec), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperPickaxeRec), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperAxeRec), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperHoeRec),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
+		};
+	
 		if (tinOreBool){	
 			// TODO Add Tin tools and that stuff
-			
+		
 			final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
 			
@@ -135,7 +150,8 @@ public class ExtraBlocksMain {
 			 */LanguageRegistry.addName(tinIngot,"Tin Ingot");
 			 
 			 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), "ingotTin"}));
-			 GameRegistry.addShapelessRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock});
+			 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock}));
+			 
 			 GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
 			 
 			 OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
@@ -215,6 +231,9 @@ public class ExtraBlocksMain {
 		
 		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper", true).getBoolean(true);
 		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin", true).getBoolean(true);
+		
+		tinToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin Tools", true).getBoolean(true);
+		copperToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper Tools", true).getBoolean(true);
 		
 		seedsToBreadBool = config.get(Configuration.CATEGORY_GENERAL, "Enable 9 seeds to 2 bread recipe", true).getBoolean(true);
 
