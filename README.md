@@ -4,9 +4,13 @@
 	<ul>
 	<li>Ability to disable ore's and blocks</li>
 	<li>Check for updates and inform user of an update</li>
+	<li>Make FTB version</li>
 </ul></p>
 
 <p>Updates: 
+<p>0.3.0 (Future)</p>
+	<ul><li>Added ore dictionary support</li>
+	</ul>
 <p>0.2.2</p>
 	<ul><li>Added ability to turn off copper/tin and world generation</li>
 	<li>Re-organised stuff</li></ul>
