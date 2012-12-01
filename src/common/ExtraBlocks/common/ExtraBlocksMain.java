@@ -116,8 +116,6 @@ public class ExtraBlocksMain {
 		};
 	
 		if (tinOreBool){	
-			// TODO Add Tin tools and that stuff
-		
 			final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
 			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
@@ -140,13 +138,24 @@ public class ExtraBlocksMain {
 		};
 		
 		if (tinToolsBool) {
-			final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
-			final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(8,0);
-			final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(9,0);
-			final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(10,0);
-			final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(11,0);
+			final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Tin Sword").setIconCoord(7,0);
+			final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Shovel").setIconCoord(8,0);
+			final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Pickaxe").setIconCoord(9,0);
+			final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Axe").setIconCoord(10,0);
+			final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Hoe").setIconCoord(11,0);
 			
+			LanguageRegistry.addName(tinSword,"Tin Sword");
+			LanguageRegistry.addName(tinShovel,"Tin Shovel");
+			LanguageRegistry.addName(tinPickaxe,"Tin Pickaxe");
+			LanguageRegistry.addName(tinAxe,"Tin Axe");
+			LanguageRegistry.addName(tinHoe,"Tin Hoe");
 			
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinSword), new Object[]{"#","#","s",Character.valueOf('#'), "ingotTin", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinShovel), new Object[]{"#","s","s",Character.valueOf('#'), "ingotTin", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotTin", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotTin", ('s'), Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotTin", ('s'), Item.stick}));
+		
 		}
 							
 		// Non-metal blocks
@@ -209,8 +218,6 @@ public class ExtraBlocksMain {
 		
 		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
 		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
-		
-		// TODO Add ability to not have the ores/blocks whatever
 		
 		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper", true).getBoolean(true);
 		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin", true).getBoolean(true);
