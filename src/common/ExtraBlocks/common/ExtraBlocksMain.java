@@ -59,12 +59,6 @@ public class ExtraBlocksMain {
 	public static boolean seedsToBreadBool;
 	public static boolean copperToolsBool;
 	public static boolean tinToolsBool;
-	
-	public static Item copperSwordRec;
-	public static Item copperShovelRec;
-	public static Item copperPickaxeRec;
-	public static Item copperAxeRec;
-	public static Item copperHoeRec;
 		
 	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
@@ -82,50 +76,43 @@ public class ExtraBlocksMain {
 		if (copperOreBool){	
 			final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
-			
+			final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
+
 			GameRegistry.registerBlock(copperOre);
 			GameRegistry.registerBlock(copperBlock);
 			
 			LanguageRegistry.addName(copperOre, "Copper Ore");
 			LanguageRegistry.addName(copperBlock, "Copper Block");
-			
-			final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
-			final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
-			final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
-			final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
-			final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
-			final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
-			
 			LanguageRegistry.addName(copperIngot, "Copper Ingot");
-			LanguageRegistry.addName(copperSword,"Copper Sword");
-			LanguageRegistry.addName(copperShovel,"Copper Shovel");
-			LanguageRegistry.addName(copperPickaxe,"Copper Pickaxe");
-			LanguageRegistry.addName(copperAxe,"Copper Axe");
-			LanguageRegistry.addName(copperHoe,"Copper Hoe");
 			
 			OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
 			OreDictionary.registerOre("oreCopper", new ItemStack(copperOre));
 			OreDictionary.registerOre("blockCopper", new ItemStack(copperBlock));
 			
 			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), "ingotCopper"}));
-			
 			CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (copperIngot,9), new Object[]{"blockCopper"}));
 			
 			GameRegistry.addSmelting(copperOre.blockID, new ItemStack(copperIngot), 0.1F);
-			
-			copperSwordRec = copperSword;
-			copperShovelRec = copperShovel;
-			copperPickaxeRec = copperPickaxe;
-			copperAxeRec = copperAxe;
-			copperHoeRec = copperHoe;
 		};
 
 		if (copperToolsBool) {
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSwordRec), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovelRec), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperPickaxeRec), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperAxeRec), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
-			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperHoeRec),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
+			final Item copperSword = new ItemSword(copperSwordID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(1,0);
+			final Item copperShovel = new ItemSpade(copperShovelID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(2,0);
+			final Item copperPickaxe = new ItemPickaxe(copperPickaxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(3,0);
+			final Item copperAxe = new ItemAxe(copperAxeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(4,0);
+			final Item copperHoe = new ItemHoe(copperHoeID, EnumToolMaterialCopper).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(5,0);
+			
+			LanguageRegistry.addName(copperSword,"Copper Sword");
+			LanguageRegistry.addName(copperShovel,"Copper Shovel");
+			LanguageRegistry.addName(copperPickaxe,"Copper Pickaxe");
+			LanguageRegistry.addName(copperAxe,"Copper Axe");
+			LanguageRegistry.addName(copperHoe,"Copper Hoe");
+			
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
 		};
 	
 		if (tinOreBool){	
@@ -133,31 +120,34 @@ public class ExtraBlocksMain {
 		
 			final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
+			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
 			
 			GameRegistry.registerBlock(tinOre);
 			GameRegistry.registerBlock(tinBlock);
 			
 			LanguageRegistry.addName(tinOre, "Tin Ore");
 			LanguageRegistry.addName(tinBlock, "Tin Block");
-			
-			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
-			/*final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
+			LanguageRegistry.addName(tinIngot,"Tin Ingot");
+			 
+			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), "ingotTin"}));
+			CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock}));
+				 
+			GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
+			 
+			OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
+			OreDictionary.registerOre("oreTin", new ItemStack(tinOre));
+			OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
+		};
+		
+		if (tinToolsBool) {
+			final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Copper Sword").setIconCoord(7,0);
 			final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Shovel").setIconCoord(8,0);
 			final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Pickaxe").setIconCoord(9,0);
 			final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Axe").setIconCoord(10,0);
 			final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Copper Hoe").setIconCoord(11,0);
-			 
-			 */LanguageRegistry.addName(tinIngot,"Tin Ingot");
-			 
-			 CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), "ingotTin"}));
-			 CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock}));
-			 
-			 GameRegistry.addSmelting(tinOre.blockID, new ItemStack(tinIngot), 0.1F);
-			 
-			 OreDictionary.registerOre("blockTin", new ItemStack(tinBlock));
-			 OreDictionary.registerOre("oreTin", new ItemStack(tinOre));
-			 OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
-		};
+			
+			
+		}
 							
 		// Non-metal blocks
 		final Block redstoneBlock = new BlockRedstoneBlock(redstoneBlockID,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
@@ -165,29 +155,22 @@ public class ExtraBlocksMain {
 		
 		proxy.registerRenderThings();
 		
-		// Registering the Blocks
 		GameRegistry.registerBlock(redstoneBlock);
 		GameRegistry.registerBlock(coalBlock);
 		
-		// Registering the custom world generation
 		GameRegistry.registerWorldGenerator(new extraBlocksWorldGen());
 		
-		// Registering the name of the Blocks
 		LanguageRegistry.addName(redstoneBlock, "Redstone Block");
 		LanguageRegistry.addName(coalBlock, "Coal Block");
 		
-		// Ore dict for non-metal blocks
 		OreDictionary.registerOre("blockRedstone", new ItemStack(redstoneBlock));
 		OreDictionary.registerOre("blockCoal", new ItemStack(coalBlock));
 
-		// Non-metal blocks
 		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
 		GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
 		
-		// This may seem a bit OP but it fits in with EE's EMC value's
 		GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});
 		
-		// Uncrafting no-metal blocks
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
 		
