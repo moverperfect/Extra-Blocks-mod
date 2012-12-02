@@ -178,7 +178,7 @@ public class ExtraBlocksMain {
 		GameRegistry.addRecipe(new ItemStack (redstoneBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.redstone});
 		GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
 		
-		GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});
+		if(seedsToBreadBool) {GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});};
 		
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.redstone,9), new Object[]{redstoneBlock});
 		GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
@@ -219,13 +219,13 @@ public class ExtraBlocksMain {
 		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
 		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
 		
-		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper", true).getBoolean(true);
-		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin", true).getBoolean(true);
+		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_CopperOre/Ingots", true).getBoolean(true);
+		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_TinOre/Ingots", true).getBoolean(true);
 		
-		tinToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Tin Tools", true).getBoolean(true);
-		copperToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_Copper Tools", true).getBoolean(true);
+		tinToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_TinTools", true).getBoolean(true);
+		copperToolsBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_CopperTools", true).getBoolean(true);
 		
-		seedsToBreadBool = config.get(Configuration.CATEGORY_GENERAL, "Enable 9 seeds to 2 bread recipe", true).getBoolean(true);
+		seedsToBreadBool = config.get(Configuration.CATEGORY_GENERAL, "SeedsToBreadRecipe", true).getBoolean(true);
 
 		config.save();
 	}
