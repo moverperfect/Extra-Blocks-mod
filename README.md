@@ -10,7 +10,8 @@
 <p>Updates: 
 <p>0.3.0 (Future)</p>
 	<ul><li>Added ore dictionary support</li>
-	<li>Added ability to turn off tin and copper tools</li></ul>
+	<li>Added ability to turn off tin and copper tools</li>
+	<li>Added tin tools</li></ul>
 <p>0.2.2</p>
 	<ul><li>Added ability to turn off copper/tin and world generation</li>
 	<li>Re-organised stuff</li></ul>
