@@ -63,7 +63,11 @@ public class ExtraBlocksMain {
 	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
 	static EnumToolMaterial EnumToolMaterialTin = EnumHelper.addToolMaterial("TIN", 2, 300, 7.5F, 2, 14);
-	static EnumToolMaterial EnumToolMaterialWood = EnumHelper.addToolMaterial("WOOD",2,300,7.5F,2,14);
+	static EnumToolMaterial EnumToolMaterialWood = EnumHelper.addToolMaterial("WOOD", 0 , 236 , 2.0F , 0 , 15 );
+	static EnumToolMaterial EnumToolMaterialStoneBrick = EnumHelper.addToolMaterial("STONE BRICK", 1 , 524 , 4.0F , 1 , 5);
+	static EnumToolMaterial EnumToolMaterialIronBlock = EnumHelper.addToolMaterial("IRON BLOCK", 2 ,2250 , 6.0F , 2 , 14 );
+	static EnumToolMaterial EnumToolMaterialDiamondBlock = EnumHelper.addToolMaterial("DIAMOND BLOCK", 3 , 14049 , 8.0F , 3, 10);
+	static EnumToolMaterial EnumToolMaterialGoldBlock = EnumHelper.addToolMaterial("GOLD BLOCK", 0 , 288, 12.0F, 0, 22);
 	
 	//TODO Add in Blocktools?
 	
