@@ -1,0 +1,16 @@
+[
+{
+	"modid": "extraBlocksMod",
+	"name": "ExtraBlocksMod",
+	"description": "More blocks/items for minecraft",
+	"version": "0.4.0",
+	"credits": "moverperfect",
+	"authors": ["moverperfect"],
+	"logoFile": "",
+	"url": "www.github.com/moverperfect/Extra-Blocks-mod/",
+	"updateUrl": "",
+	"parent": "",
+	"screenshots": [],
+	"dependencies": ["Minecraft Forge"]
+}
+]
