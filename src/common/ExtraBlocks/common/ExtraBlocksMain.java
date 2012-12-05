@@ -81,7 +81,7 @@ public class ExtraBlocksMain {
 		if (copperOreBool){	
 			final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
-			final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ore").setIconCoord(0,0);	
+			final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ingot").setIconCoord(0,0);	
 
 			GameRegistry.registerBlock(copperOre);
 			GameRegistry.registerBlock(copperBlock);
@@ -123,7 +123,7 @@ public class ExtraBlocksMain {
 		if (tinOreBool){	
 			final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
-			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ore").setIconCoord(6,0);
+			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ingot").setIconCoord(0,1);
 			
 			GameRegistry.registerBlock(tinOre);
 			GameRegistry.registerBlock(tinBlock);
@@ -143,11 +143,11 @@ public class ExtraBlocksMain {
 		};
 		
 		if (tinToolsBool) {
-			final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Tin Sword").setIconCoord(7,0);
-			final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Shovel").setIconCoord(8,0);
-			final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Pickaxe").setIconCoord(9,0);
-			final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Axe").setIconCoord(10,0);
-			final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Hoe").setIconCoord(11,0);
+			final Item tinSword = new ItemSword(tinSwordID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabCombat).setItemName("Tin Sword").setIconCoord(1,1);
+			final Item tinShovel = new ItemSpade(tinShovelID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Shovel").setIconCoord(2,1);
+			final Item tinPickaxe = new ItemPickaxe(tinPickaxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Pickaxe").setIconCoord(3,1);
+			final Item tinAxe = new ItemAxe(tinAxeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Axe").setIconCoord(4,1);
+			final Item tinHoe = new ItemHoe(tinHoeID, EnumToolMaterialTin).setCreativeTab(CreativeTabs.tabTools).setItemName("Tin Hoe").setIconCoord(5,1);
 			
 			LanguageRegistry.addName(tinSword,"Tin Sword");
 			LanguageRegistry.addName(tinShovel,"Tin Shovel");
