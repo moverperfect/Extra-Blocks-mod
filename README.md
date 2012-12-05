@@ -2,7 +2,6 @@
 
 <p>Plans:
 	<ul>
-	<li>Ability to disable ore's and blocks</li>
 	<li>Check for updates and inform user of an update</li>
 	<li>Make FTB version</li>
 </ul></p>
