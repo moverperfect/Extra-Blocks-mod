@@ -59,6 +59,8 @@ public class ExtraBlocksMain {
 	public static boolean seedsToBreadBool;
 	public static boolean copperToolsBool;
 	public static boolean tinToolsBool;
+	
+	public static boolean blockToolsBool;
 		
 	// Enum helper: Name, HarvestLevel, Maxuses, Efficiency, Damage, Enchantability
 	static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 200, 7.0F, 2, 14);
@@ -162,6 +164,11 @@ public class ExtraBlocksMain {
 			CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotTin", ('s'), Item.stick}));
 		
 		}
+		
+		if (blockToolsBool) {
+			// TODO Do all the tools, EVERYTHING
+			
+		}
 							
 		// Non-metal blocks
 		final Block redstoneBlock = new BlockRedstoneBlock(redstoneBlockID,4).setHardness(4F).setResistance(10F).setBlockName("Redstone Block").setCreativeTab(CreativeTabs.tabDecorations);
@@ -232,6 +239,8 @@ public class ExtraBlocksMain {
 		
 		seedsToBreadBool = config.get(Configuration.CATEGORY_GENERAL, "SeedsToBreadRecipe", true).getBoolean(true);
 
+		blockToolsBool = config.get(Configuration.CATEGORY_GENERAL, "'Block' Tools", true).getBoolean(true);
+		
 		config.save();
 	}
 	
