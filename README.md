@@ -11,6 +11,7 @@
 <p>0.4.0 (Future)</p>
 	<ul>
 	<li>Added 'Block' tools</li>
+	<li>Bug fixes</li>
 	</ul>
 <p>0.3.0 <a href="http://adfoc.us/10571813764748">Download</a></p>
 	<ul>
