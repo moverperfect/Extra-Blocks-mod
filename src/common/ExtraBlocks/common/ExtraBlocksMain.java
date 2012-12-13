@@ -54,6 +54,8 @@ public class ExtraBlocksMain {
 	public static int tinAxeID;
 	public static int tinHoeID;
 	
+	public static int blockToolsID;
+	
 	public static boolean copperOreBool;
 	public static boolean tinOreBool;
 	public static boolean seedsToBreadBool;
@@ -71,7 +73,6 @@ public class ExtraBlocksMain {
 	static EnumToolMaterial EnumToolMaterialDiamondBlock = EnumHelper.addToolMaterial("DIAMOND BLOCK", 3 , 14049 , 8.0F , 3, 10);
 	static EnumToolMaterial EnumToolMaterialGoldBlock = EnumHelper.addToolMaterial("GOLD BLOCK", 0 , 288, 12.0F, 0, 22);
 	
-	//TODO Add in Blocktools?
 	
 	// Game registry/ Language registry
 	@Init
@@ -166,7 +167,21 @@ public class ExtraBlocksMain {
 		}
 		
 		if (blockToolsBool) {
-			// TODO Do all the tools, EVERYTHING
+			// TODO Register the tools, WOOD, STONE, IRON, DIAMOND, GOLD
+			
+			final Item woodSword = new ItemSword(700, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,2);
+			final Item woodShovel = new ItemSpade(701, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,2);
+			final Item woodPickaxe = new ItemPickaxe(702, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,2);
+			final Item woodAxe = new ItemAxe(703, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,2);
+			final Item woodHoe = new ItemHoe(704, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,2);
+			
+			LanguageRegistry.addName(woodSword,"Wood Sword");
+			LanguageRegistry.addName(woodShovel,"Wood Shovel");
+			LanguageRegistry.addName(woodPickaxe,"Wood Pickaxe");
+			LanguageRegistry.addName(woodAxe,"Wood Axe");
+			LanguageRegistry.addName(woodHoe,"Wood Hoe");
+			
+			// TODO Block tools recipies, WOOD, STONE, IRON, DIAMOND, GOLD
 			
 		}
 							
@@ -227,6 +242,8 @@ public class ExtraBlocksMain {
 		tinPickaxeID = config.getItem("Tin Pickaxe", 1513).getInt();
 		tinAxeID = config.getItem("Tin Axe", 1514).getInt();
 		tinHoeID = config.getItem("Tin Hoe", 1515).getInt();
+		
+		blockToolsID = config.getItem("The first ID that it should use(it takes 25 ID's in total", 1550).getInt();
 		
 		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
 		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
