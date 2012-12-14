@@ -167,13 +167,27 @@ public class ExtraBlocksMain {
 		}
 		
 		if (blockToolsBool) {
-			// TODO Register the tools, WOOD, STONE, IRON, DIAMOND, GOLD
+			// TODO Register the tools, STONE, DIAMOND, GOLD
+			// TODO Correct id's
+			
 			
 			final Item woodSword = new ItemSword(700, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,2);
 			final Item woodShovel = new ItemSpade(701, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,2);
 			final Item woodPickaxe = new ItemPickaxe(702, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,2);
 			final Item woodAxe = new ItemAxe(703, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,2);
 			final Item woodHoe = new ItemHoe(704, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,2);
+			/*  TODO Balance issues
+			 final Item stoneSword = new ItemSword(705, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,3);
+			final Item woodShovel = new ItemSpade(701, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,3);
+			final Item woodPickaxe = new ItemPickaxe(702, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,3);
+			final Item woodAxe = new ItemAxe(703, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,3);
+			final Item woodHoe = new ItemHoe(704, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,3);
+			*/
+			final Item ironBlockSword = new ItemSword(700, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Iron Block Sword").setIconCoord(0,4);
+			final Item ironBlockShovel = new ItemSpade(701, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Shovel").setIconCoord(1,4);
+			final Item ironBlockPickaxe = new ItemPickaxe(702, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Pickaxe").setIconCoord(2,4);
+			final Item ironBlockAxe = new ItemAxe(703, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Axe").setIconCoord(3,4);
+			final Item ironBlockHoe = new ItemHoe(704, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Hoe").setIconCoord(4,4);
 			
 			LanguageRegistry.addName(woodSword,"Wood Sword");
 			LanguageRegistry.addName(woodShovel,"Wood Shovel");
@@ -181,13 +195,33 @@ public class ExtraBlocksMain {
 			LanguageRegistry.addName(woodAxe,"Wood Axe");
 			LanguageRegistry.addName(woodHoe,"Wood Hoe");
 			
-			// TODO Block tools recipies, WOOD, STONE, IRON, DIAMOND, GOLD
+			/*
+			LanguageRegistry.addName(stoneSword,"Stone Sword");
+			LanguageRegistry.addName(stoneShovel,"Stone Shovel");
+			LanguageRegistry.addName(stonePickaxe,"Stone Pickaxe");
+			LanguageRegistry.addName(stoneAxe,"Stone Axe");
+			LanguageRegistry.addName(stoneHoe,"Stone Hoe");
+			 */
+			
+			LanguageRegistry.addName(ironBlockSword,"Iron Block Sword");
+			LanguageRegistry.addName(ironBlockShovel,"Iron Block Shovel");
+			LanguageRegistry.addName(ironBlockPickaxe,"Iron Block Pickaxe");
+			LanguageRegistry.addName(ironBlockAxe,"Iron Block Axe");
+			LanguageRegistry.addName(ironBlockHoe,"Iron Block Hoe");
+			
+			// TODO Block tools recipies, STONE, IRON, DIAMOND, GOLD
 			
 			GameRegistry.addRecipe(new ItemStack(woodSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.wood, ('s'), Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.wood, ('s'), Item.stick});
+			
+			GameRegistry.addRecipe(new ItemStack(ironBlockSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.blockSteel, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(ironBlockShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.blockSteel, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(ironBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.blockSteel, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(ironBlockAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.blockSteel, ('s'), Item.stick});
+			GameRegistry.addRecipe(new ItemStack(ironBlockHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.blockSteel, ('s'), Item.stick});
 
 		}
 							
