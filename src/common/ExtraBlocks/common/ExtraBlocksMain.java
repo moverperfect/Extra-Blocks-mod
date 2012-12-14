@@ -253,6 +253,7 @@ public class ExtraBlocksMain {
 		// Register the fuel handler
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
 				
+		// TODO Add Half slabs back into full blocks
 	}
 	
 	// Say i am initialising and sort out config files
