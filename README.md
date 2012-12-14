@@ -11,6 +11,7 @@
 	<ul>
 	<li>Added 'Block' tools</li>
 	<li>Bug fixes</li>
+	<li>Added new recipe to turn 2 wood slabs back into wooden planks</li>
 	</ul>
 <p>0.3.0 <a href="http://adfoc.us/10571813764748">Download</a></p>
 	<ul>
