@@ -183,6 +183,12 @@ public class ExtraBlocksMain {
 			
 			// TODO Block tools recipies, WOOD, STONE, IRON, DIAMOND, GOLD
 			
+			GameRegistry.addRecipe(new ItemStack(woodSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(woodShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(woodPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(woodAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.wood, ('s'), Item.stick});
+			GameRegistry.addRecipe(new ItemStack(woodHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.wood, ('s'), Item.stick});
+
 		}
 							
 		// Non-metal blocks
