@@ -254,8 +254,10 @@ public class ExtraBlocksMain {
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
 				
 		// TODO Add Half slabs back into full blocks
-	}
-	
+		/*
+		GameRegistry.addRecipe(new ItemStack(Block.planks,1), new Object[]{"#" ,"#" ," " , Character.valueOf('#'), Block.woodSingleSlab});
+		*/
+	};
 	// Say i am initialising and sort out config files
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
