@@ -25,7 +25,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod (modid = "extraBlocksMod", name = "extraBlocksMod", version = "0.4.0")
+@Mod (modid = "ExtraBlocksMod", name = "ExtraBlocksMod", version = "0.4.0")
 
 public class ExtraBlocksMain {
 	

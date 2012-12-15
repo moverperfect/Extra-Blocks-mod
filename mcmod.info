@@ -1,6 +1,6 @@
 [
 {
-	"modid": "extraBlocksMod",
+	"modid": "ExtraBlocksMod",
 	"name": "ExtraBlocksMod",
 	"description": "More blocks/items for minecraft",
 	"version": "0.4.0",
@@ -11,6 +11,6 @@
 	"updateUrl": "",
 	"parent": "",
 	"screenshots": [],
-	"dependencies": ["Minecraft Forge"]
+	"dependencies": ["mod_MinecraftForge"]
 }
 ]
