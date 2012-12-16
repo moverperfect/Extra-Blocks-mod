@@ -167,7 +167,7 @@ public class ExtraBlocksMain {
 		}
 		
 		if (blockToolsBool) {
-			// TODO Register the tools, STONE, DIAMOND, GOLD
+			// TODO Register the tools, STONE, GOLD
 			// TODO Correct id's
 			
 			
@@ -189,6 +189,12 @@ public class ExtraBlocksMain {
 			final Item ironBlockAxe = new ItemAxe(703, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Axe").setIconCoord(3,4);
 			final Item ironBlockHoe = new ItemHoe(704, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Hoe").setIconCoord(4,4);
 			
+			final Item diamondBlockSword = new ItemSword(700, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Diamond Block Sword").setIconCoord(0,5);
+			final Item diamondBlockShovel = new ItemSpade(701, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Shovel").setIconCoord(1,5);
+			final Item diamondBlockPickaxe = new ItemPickaxe(702, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Pickaxe").setIconCoord(2,5);
+			final Item diamondBlockAxe = new ItemAxe(703, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Axe").setIconCoord(3,5);
+			final Item diamondBlockHoe = new ItemHoe(704, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Hoe").setIconCoord(4,5);
+			
 			LanguageRegistry.addName(woodSword,"Wood Sword");
 			LanguageRegistry.addName(woodShovel,"Wood Shovel");
 			LanguageRegistry.addName(woodPickaxe,"Wood Pickaxe");
@@ -209,7 +215,13 @@ public class ExtraBlocksMain {
 			LanguageRegistry.addName(ironBlockAxe,"Iron Block Axe");
 			LanguageRegistry.addName(ironBlockHoe,"Iron Block Hoe");
 			
-			// TODO Block tools recipies, STONE, IRON, DIAMOND, GOLD
+			LanguageRegistry.addName(diamondBlockSword,"Diamond Block Sword");
+			LanguageRegistry.addName(diamondBlockShovel,"Diamond Block Shovel");
+			LanguageRegistry.addName(diamondBlockPickaxe,"Diamond Block Pickaxe");
+			LanguageRegistry.addName(diamondBlockAxe,"Diamond Block Axe");
+			LanguageRegistry.addName(diamondBlockHoe,"Diamond Block Hoe");
+			
+			// TODO Block tools recipies, STONE, GOLD
 			
 			GameRegistry.addRecipe(new ItemStack(woodSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
@@ -222,6 +234,12 @@ public class ExtraBlocksMain {
 			GameRegistry.addRecipe(new ItemStack(ironBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.blockSteel, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(ironBlockAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.blockSteel, ('s'), Item.stick});
 			GameRegistry.addRecipe(new ItemStack(ironBlockHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.blockSteel, ('s'), Item.stick});
+			
+			GameRegistry.addRecipe(new ItemStack(diamondBlockSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.blockDiamond, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(diamondBlockShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.blockDiamond, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(diamondBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.blockDiamond, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(diamondBlockAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.blockDiamond, ('s'), Item.stick});
+			GameRegistry.addRecipe(new ItemStack(diamondBlockHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.blockDiamond, ('s'), Item.stick});
 
 		}
 							
