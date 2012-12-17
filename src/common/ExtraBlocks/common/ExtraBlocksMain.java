@@ -126,7 +126,7 @@ public class ExtraBlocksMain {
 		if (tinOreBool){	
 			final Block tinOre = new BlockTinOre(tinOreID,2).setHardness(4F).setResistance(10F).setBlockName("Tin Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
-			final Item tinIngot = new ItemTinIngot(1510).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ingot").setIconCoord(0,1);
+			final Item tinIngot = new ItemTinIngot(tinIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ingot").setIconCoord(0,1);
 			
 			GameRegistry.registerBlock(tinOre);
 			GameRegistry.registerBlock(tinBlock);
@@ -287,27 +287,27 @@ public class ExtraBlocksMain {
 		copperOreID = config.getBlock("Copper Ore", 700).getInt(700);
 		copperBlockID = config.getBlock("Copper Block", 701).getInt(701);
 		
-		copperIngotID = config.get(Configuration.CATEGORY_ITEM,"Copper Ingot", 702).getInt(702);
-		copperSwordID = config.get(Configuration.CATEGORY_ITEM,"Copper Sword", 703).getInt(703);
-		copperShovelID = config.get(Configuration.CATEGORY_ITEM,"Copper Shovel", 704).getInt(704);
-		copperPickaxeID = config.get(Configuration.CATEGORY_ITEM,"Copper Pickaxe", 705).getInt(705);
-		copperAxeID = config.get(Configuration.CATEGORY_ITEM,"Copper Axe", 706).getInt(706);
-		copperHoeID = config.get(Configuration.CATEGORY_ITEM,"Copper Hoe", 707).getInt(707);
+		copperIngotID = config.getItem("Copper Ingot", 7000).getInt(6746);
+		copperSwordID = config.getItem("Copper Sword", 7001).getInt(7001);
+		copperShovelID = config.getItem("Copper Shovel", 7002).getInt(7002);
+		copperPickaxeID = config.getItem("Copper Pickaxe", 7003).getInt(7003);
+		copperAxeID = config.getItem("Copper Axe", 7004).getInt(7004);
+		copperHoeID = config.getItem("Copper Hoe", 7005).getInt(7005);
 		
-		tinOreID = config.getBlock("Tin Ore", 708).getInt(708);
-		tinBlockID = config.getBlock("Tin Block", 709).getInt(709);
+		tinOreID = config.getBlock("Tin Ore", 702).getInt(702);
+		tinBlockID = config.getBlock("Tin Block", 703).getInt(703);
 		
-		tinIngotID = config.get(Configuration.CATEGORY_ITEM,"Tin Ingot", 710).getInt(710);
-		tinSwordID = config.get(Configuration.CATEGORY_ITEM,"Tin Sword", 711).getInt(711);
-		tinShovelID = config.get(Configuration.CATEGORY_ITEM,"Tin Shovel", 712).getInt(712);
-		tinPickaxeID = config.get(Configuration.CATEGORY_ITEM,"Tin Pickaxe", 713).getInt(713);
-		tinAxeID = config.get(Configuration.CATEGORY_ITEM,"Tin Axe", 714).getInt(714);
-		tinHoeID = config.get(Configuration.CATEGORY_ITEM,"Tin Hoe", 715).getInt(715);
+		tinIngotID = config.getItem("Tin Ingot", 7006).getInt(7006);
+		tinSwordID = config.getItem("Tin Sword", 7007).getInt(7007);
+		tinShovelID = config.getItem("Tin Shovel", 7008).getInt(7008);
+		tinPickaxeID = config.getItem("Tin Pickaxe", 7009).getInt(7009);
+		tinAxeID = config.getItem("Tin Axe", 7010).getInt(7010);
+		tinHoeID = config.getItem("Tin Hoe", 7011).getInt(7011);
 		
-		blockToolsID = config.get(Configuration.CATEGORY_ITEM,"The first ID that 'Block' tools should use(it takes 25 ID's in total)", 718).getInt(718);
+		blockToolsID = config.getItem("The first ID that 'Block' tools should use(it takes 25 ID's in total)", 7012).getInt(7012);
 		
-		redstoneBlockID = config.getBlock("Redstone Block", 716).getInt(716);
-		coalBlockID = config.getBlock("Coal Block", 717).getInt(717);
+		redstoneBlockID = config.getBlock("Redstone Block", 704).getInt(704);
+		coalBlockID = config.getBlock("Coal Block", 705).getInt(705);
 		
 		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_CopperOre/Ingots", true).getBoolean(true);
 		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_TinOre/Ingots", true).getBoolean(true);
