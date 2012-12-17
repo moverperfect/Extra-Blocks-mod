@@ -171,29 +171,29 @@ public class ExtraBlocksMain {
 			// TODO Correct id's
 			
 			
-			final Item woodSword = new ItemSword(700, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,2);
-			final Item woodShovel = new ItemSpade(701, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,2);
-			final Item woodPickaxe = new ItemPickaxe(702, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,2);
-			final Item woodAxe = new ItemAxe(703, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,2);
-			final Item woodHoe = new ItemHoe(704, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,2);
+			final Item woodSword = new ItemSword(blockToolsID, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,2);
+			final Item woodShovel = new ItemSpade(blockToolsID+1, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,2);
+			final Item woodPickaxe = new ItemPickaxe(blockToolsID+2, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,2);
+			final Item woodAxe = new ItemAxe(blockToolsID+3, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,2);
+			final Item woodHoe = new ItemHoe(blockToolsID+4, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,2);
 			/*  TODO Balance issues
-			 final Item stoneSword = new ItemSword(705, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,3);
-			final Item woodShovel = new ItemSpade(701, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,3);
-			final Item woodPickaxe = new ItemPickaxe(702, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,3);
-			final Item woodAxe = new ItemAxe(703, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,3);
-			final Item woodHoe = new ItemHoe(704, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,3);
+			 final Item stoneSword = new ItemSword(blockToolsID+5, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,3);
+			final Item woodShovel = new ItemSpade(blockToolsID+6, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,3);
+			final Item woodPickaxe = new ItemPickaxe(blockToolsID+7, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Pickaxe").setIconCoord(2,3);
+			final Item woodAxe = new ItemAxe(blockToolsID+8, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Axe").setIconCoord(3,3);
+			final Item woodHoe = new ItemHoe(blockToolsID+9, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Hoe").setIconCoord(4,3);
 			*/
-			final Item ironBlockSword = new ItemSword(700, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Iron Block Sword").setIconCoord(0,4);
-			final Item ironBlockShovel = new ItemSpade(701, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Shovel").setIconCoord(1,4);
-			final Item ironBlockPickaxe = new ItemPickaxe(702, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Pickaxe").setIconCoord(2,4);
-			final Item ironBlockAxe = new ItemAxe(703, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Axe").setIconCoord(3,4);
-			final Item ironBlockHoe = new ItemHoe(704, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Hoe").setIconCoord(4,4);
+			final Item ironBlockSword = new ItemSword(blockToolsID+10, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Iron Block Sword").setIconCoord(0,4);
+			final Item ironBlockShovel = new ItemSpade(blockToolsID+11, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Shovel").setIconCoord(1,4);
+			final Item ironBlockPickaxe = new ItemPickaxe(blockToolsID+12, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Pickaxe").setIconCoord(2,4);
+			final Item ironBlockAxe = new ItemAxe(blockToolsID+13, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Axe").setIconCoord(3,4);
+			final Item ironBlockHoe = new ItemHoe(blockToolsID+14, EnumToolMaterialIronBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Iron Block Hoe").setIconCoord(4,4);
 			
-			final Item diamondBlockSword = new ItemSword(700, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Diamond Block Sword").setIconCoord(0,5);
-			final Item diamondBlockShovel = new ItemSpade(701, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Shovel").setIconCoord(1,5);
-			final Item diamondBlockPickaxe = new ItemPickaxe(702, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Pickaxe").setIconCoord(2,5);
-			final Item diamondBlockAxe = new ItemAxe(703, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Axe").setIconCoord(3,5);
-			final Item diamondBlockHoe = new ItemHoe(704, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Hoe").setIconCoord(4,5);
+			final Item diamondBlockSword = new ItemSword(blockToolsID+15, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Diamond Block Sword").setIconCoord(0,5);
+			final Item diamondBlockShovel = new ItemSpade(blockToolsID+16, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Shovel").setIconCoord(1,5);
+			final Item diamondBlockPickaxe = new ItemPickaxe(blockToolsID+17, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Pickaxe").setIconCoord(2,5);
+			final Item diamondBlockAxe = new ItemAxe(blockToolsID+18, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Axe").setIconCoord(3,5);
+			final Item diamondBlockHoe = new ItemHoe(blockToolsID+19, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Hoe").setIconCoord(4,5);
 			
 			LanguageRegistry.addName(woodSword,"Wood Sword");
 			LanguageRegistry.addName(woodShovel,"Wood Shovel");
@@ -284,30 +284,30 @@ public class ExtraBlocksMain {
 		
 		config.load();
 		
-		copperOreID = config.getBlock("Copper Ore", 1500).getInt();
-		copperBlockID = config.getBlock("Copper Block", 1501).getInt();
+		copperOreID = config.getBlock("Copper Ore", 700).getInt(700);
+		copperBlockID = config.getBlock("Copper Block", 701).getInt(701);
 		
-		copperIngotID = config.getItem("Copper Ingot", 1502).getInt();
-		copperSwordID = config.getItem("Copper Sword", 1503).getInt();
-		copperShovelID = config.getItem("Copper Shovel", 1504).getInt();
-		copperPickaxeID = config.getItem("Copper Pickaxe", 1505).getInt();
-		copperAxeID = config.getItem("Copper Axe", 1506).getInt();
-		copperHoeID = config.getItem("Copper Hoe", 1507).getInt();
+		copperIngotID = config.get(Configuration.CATEGORY_ITEM,"Copper Ingot", 702).getInt(702);
+		copperSwordID = config.get(Configuration.CATEGORY_ITEM,"Copper Sword", 703).getInt(703);
+		copperShovelID = config.get(Configuration.CATEGORY_ITEM,"Copper Shovel", 704).getInt(704);
+		copperPickaxeID = config.get(Configuration.CATEGORY_ITEM,"Copper Pickaxe", 705).getInt(705);
+		copperAxeID = config.get(Configuration.CATEGORY_ITEM,"Copper Axe", 706).getInt(706);
+		copperHoeID = config.get(Configuration.CATEGORY_ITEM,"Copper Hoe", 707).getInt(707);
 		
-		tinOreID = config.getBlock("Tin Ore", 1508).getInt();
-		tinBlockID = config.getBlock("Tin Block", 1509).getInt();
+		tinOreID = config.getBlock("Tin Ore", 708).getInt(708);
+		tinBlockID = config.getBlock("Tin Block", 709).getInt(709);
 		
-		tinIngotID = config.getItem("Tin Ingot", 1510).getInt();
-		tinSwordID = config.getItem("Tin Sword", 1511).getInt();
-		tinShovelID = config.getItem("Tin Shovel", 1512).getInt();
-		tinPickaxeID = config.getItem("Tin Pickaxe", 1513).getInt();
-		tinAxeID = config.getItem("Tin Axe", 1514).getInt();
-		tinHoeID = config.getItem("Tin Hoe", 1515).getInt();
+		tinIngotID = config.get(Configuration.CATEGORY_ITEM,"Tin Ingot", 710).getInt(710);
+		tinSwordID = config.get(Configuration.CATEGORY_ITEM,"Tin Sword", 711).getInt(711);
+		tinShovelID = config.get(Configuration.CATEGORY_ITEM,"Tin Shovel", 712).getInt(712);
+		tinPickaxeID = config.get(Configuration.CATEGORY_ITEM,"Tin Pickaxe", 713).getInt(713);
+		tinAxeID = config.get(Configuration.CATEGORY_ITEM,"Tin Axe", 714).getInt(714);
+		tinHoeID = config.get(Configuration.CATEGORY_ITEM,"Tin Hoe", 715).getInt(715);
 		
-		blockToolsID = config.getItem("The first ID that it should use(it takes 25 ID's in total", 1550).getInt();
+		blockToolsID = config.get(Configuration.CATEGORY_ITEM,"The first ID that 'Block' tools should use(it takes 25 ID's in total)", 718).getInt(718);
 		
-		redstoneBlockID = config.getBlock("Redstone Block", 1516).getInt();
-		coalBlockID = config.getBlock("Coal Block", 1517).getInt();
+		redstoneBlockID = config.getBlock("Redstone Block", 716).getInt(716);
+		coalBlockID = config.getBlock("Coal Block", 717).getInt(717);
 		
 		copperOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_CopperOre/Ingots", true).getBoolean(true);
 		tinOreBool = config.get(Configuration.CATEGORY_GENERAL, "Enable_TinOre/Ingots", true).getBoolean(true);
