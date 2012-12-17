@@ -270,11 +270,11 @@ public class ExtraBlocksMain {
 		
 		// Register the fuel handler
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
-				
-		// TODO Add Half slabs back into full blocks
-		/*
-		GameRegistry.addRecipe(new ItemStack(Block.planks,1), new Object[]{"#" ,"#" ," " , Character.valueOf('#'), Block.woodSingleSlab});
-		*/
+			
+		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 0), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 0)});
+		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 2), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 2)});
+		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 1), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 1)});
+		GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 3), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 3)});
 	};
 	// Say i am initialising and sort out config files
 	@PreInit
