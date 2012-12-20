@@ -167,9 +167,7 @@ public class ExtraBlocksMain {
 		}
 		
 		if (blockToolsBool) {
-			// TODO Register the tools, STONE, GOLD
-			// TODO Correct id's
-			
+			// TODO Register the tools, STONE
 			
 			final Item woodSword = new ItemSword(blockToolsID, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabCombat).setItemName("Wood Sword").setIconCoord(0,2);
 			final Item woodShovel = new ItemSpade(blockToolsID+1, EnumToolMaterialWood).setCreativeTab(CreativeTabs.tabTools).setItemName("Wood Shovel").setIconCoord(1,2);
@@ -194,6 +192,12 @@ public class ExtraBlocksMain {
 			final Item diamondBlockPickaxe = new ItemPickaxe(blockToolsID+17, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Pickaxe").setIconCoord(2,5);
 			final Item diamondBlockAxe = new ItemAxe(blockToolsID+18, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Axe").setIconCoord(3,5);
 			final Item diamondBlockHoe = new ItemHoe(blockToolsID+19, EnumToolMaterialDiamondBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Diamond Block Hoe").setIconCoord(4,5);
+			
+			final Item goldBlockSword = new ItemSword(blockToolsID+20, EnumToolMaterialGoldBlock).setCreativeTab(CreativeTabs.tabCombat).setItemName("Gold Block Sword").setIconCoord(0,6);
+			final Item goldBlockShovel = new ItemSpade(blockToolsID+21, EnumToolMaterialGoldBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Gold Block Shovel").setIconCoord(1,6);
+			final Item goldBlockPickaxe = new ItemPickaxe(blockToolsID+22, EnumToolMaterialGoldBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Gold Block Pickaxe").setIconCoord(2,6);
+			final Item goldBlockAxe = new ItemAxe(blockToolsID+23, EnumToolMaterialGoldBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Gold Block Axe").setIconCoord(3,6);
+			final Item goldBlockHoe = new ItemHoe(blockToolsID+24, EnumToolMaterialGoldBlock).setCreativeTab(CreativeTabs.tabTools).setItemName("Gold Block Hoe").setIconCoord(4,6);
 			
 			LanguageRegistry.addName(woodSword,"Wood Sword");
 			LanguageRegistry.addName(woodShovel,"Wood Shovel");
@@ -221,7 +225,13 @@ public class ExtraBlocksMain {
 			LanguageRegistry.addName(diamondBlockAxe,"Diamond Block Axe");
 			LanguageRegistry.addName(diamondBlockHoe,"Diamond Block Hoe");
 			
-			// TODO Block tools recipies, STONE, GOLD
+			LanguageRegistry.addName(goldBlockSword,"Gold Block Sword");
+			LanguageRegistry.addName(goldBlockShovel,"Gold Block Shovel");
+			LanguageRegistry.addName(goldBlockPickaxe,"Gold Block Pickaxe");
+			LanguageRegistry.addName(goldBlockAxe,"Gold Block Axe");
+			LanguageRegistry.addName(goldBlockHoe,"Gold Block Hoe");
+			
+			// TODO Block tools recipies, STONE
 			
 			GameRegistry.addRecipe(new ItemStack(woodSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(woodShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
@@ -240,6 +250,12 @@ public class ExtraBlocksMain {
 			GameRegistry.addRecipe(new ItemStack(diamondBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.blockDiamond, ('s'),Item.stick});
 			GameRegistry.addRecipe(new ItemStack(diamondBlockAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.blockDiamond, ('s'), Item.stick});
 			GameRegistry.addRecipe(new ItemStack(diamondBlockHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.blockDiamond, ('s'), Item.stick});
+			
+			GameRegistry.addRecipe(new ItemStack(goldBlockSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.blockGold, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(goldBlockShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.blockGold, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(goldBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.blockGold, ('s'),Item.stick});
+			GameRegistry.addRecipe(new ItemStack(goldBlockAxe),new Object[]{"##","#s"," s",Character.valueOf('#'), Block.blockGold, ('s'), Item.stick});
+			GameRegistry.addRecipe(new ItemStack(goldBlockHoe), new Object[]{"##"," s"," s",Character.valueOf('#'), Block.blockGold, ('s'), Item.stick});
 
 		}
 							
