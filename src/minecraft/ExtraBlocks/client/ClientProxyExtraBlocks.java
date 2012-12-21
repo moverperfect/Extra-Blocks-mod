@@ -8,6 +8,6 @@ public class ClientProxyExtraBlocks extends CommonProxyExtraBlocks
 @Override
 public void registerRenderThings()
 {
-MinecraftForgeClient.preloadTexture("/textures/blocks.png");
+MinecraftForgeClient.preloadTexture("/textures/Blocks.png");
 }
 }
