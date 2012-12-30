@@ -1,5 +1,11 @@
 <p>This mod is just a bit of fun, if you really want to use it then a download is provided. I am just creating and updating this to learn.</p>
 
+<p>Authors</p>
+<ul>
+<li>moverperfect - Coder</li>
+<li>jshredder11 - Textures</li>
+</ul>
+
 <p>Plans:
 	<ul>
 	<li>Check for updates and inform user of an update</li>
@@ -7,11 +13,12 @@
 </ul></p>
 
 <p>Updates: 
-<p>0.4.0 (Future)</p>
+<p>0.4.0 <a href="http://adfoc.us/10571813808946">Download: 1.4.5</a> <p>  </p> <a href="http://adfoc.us/10571815686842">Download: 1.4.6</a></p></p></p>
 	<ul>
 	<li>Added 'Block' tools</li>
 	<li>Bug fixes</li>
 	<li>Added new recipe to turn 2 wood slabs back into wooden planks</li>
+	<li>Updated to 1.4.6</li>
 	</ul>
 <p>0.3.0 <a href="http://adfoc.us/10571813764748">Download</a></p>
 	<ul>
