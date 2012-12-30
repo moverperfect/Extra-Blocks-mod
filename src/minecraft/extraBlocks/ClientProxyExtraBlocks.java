@@ -1,7 +1,6 @@
-package ExtraBlocks.client;
+package extraBlocks;
 
 import net.minecraftforge.client.MinecraftForgeClient;
-import ExtraBlocks.common.CommonProxyExtraBlocks;
 
 public class ClientProxyExtraBlocks extends CommonProxyExtraBlocks
 {

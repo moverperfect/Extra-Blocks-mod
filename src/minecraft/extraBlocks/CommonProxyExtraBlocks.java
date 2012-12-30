@@ -1,4 +1,4 @@
-package ExtraBlocks.common;
+package extraBlocks;
 
 public class CommonProxyExtraBlocks
 {

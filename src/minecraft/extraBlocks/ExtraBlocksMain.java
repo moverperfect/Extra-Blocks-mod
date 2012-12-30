@@ -1,11 +1,11 @@
-package ExtraBlocks.common;
+package extraBlocks;
 
-import net.minecraft.src.Block;
-import net.minecraft.src.CraftingManager;
-import net.minecraft.src.CreativeTabs;
-import net.minecraft.src.EnumToolMaterial;
-import net.minecraft.src.Item;
-import net.minecraft.src.ItemStack;
+import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
@@ -29,7 +29,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ExtraBlocksMain {
 	
-	@SidedProxy(clientSide = "ExtraBlocks.client.ClientProxyExtraBlocks", serverSide = "ExtraBlocks.common.CommonProxyExtraBlocks")
+	@SidedProxy(clientSide = "extraBlocks.ClientProxyExtraBlocks", serverSide = "ExtraBlocks.CommonProxyExtraBlocks")
 	public static CommonProxyExtraBlocks proxy;	
 	
 	@Instance("extrablocks")
@@ -79,15 +79,14 @@ public class ExtraBlocksMain {
 	public void load(FMLInitializationEvent event){
 		
 		
-		
 		// Blocks
 		if (copperOreBool){	
 			final Block copperOre = new BlockCopperOre(copperOreID,0).setHardness(4F).setResistance(10F).setBlockName("Copper Ore").setCreativeTab(CreativeTabs.tabBlock);
 			final Block copperBlock = new BlockCopperBlock(copperBlockID,1).setHardness(4F).setResistance(10F).setBlockName("Copper Block").setCreativeTab(CreativeTabs.tabDecorations);
 			final Item copperIngot = new ItemCopperIngot(copperIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Copper Ingot").setIconCoord(0,0);	
 
-			GameRegistry.registerBlock(copperOre);
-			GameRegistry.registerBlock(copperBlock);
+			GameRegistry.registerBlock(copperOre,"ExtraBlocks_CopperOre");
+			GameRegistry.registerBlock(copperBlock,"ExtraBlocks_CopperBlock");
 			
 			LanguageRegistry.addName(copperOre, "Copper Ore");
 			LanguageRegistry.addName(copperBlock, "Copper Block");
@@ -128,8 +127,8 @@ public class ExtraBlocksMain {
 			final Block tinBlock = new BlockTinBlock(tinBlockID,3).setHardness(4F).setResistance(10F).setBlockName("Tin Block").setCreativeTab(CreativeTabs.tabDecorations);
 			final Item tinIngot = new ItemTinIngot(tinIngotID).setCreativeTab(CreativeTabs.tabMaterials).setItemName("Tin Ingot").setIconCoord(0,1);
 			
-			GameRegistry.registerBlock(tinOre);
-			GameRegistry.registerBlock(tinBlock);
+			GameRegistry.registerBlock(tinOre,"ExtraBlocks_TinOre");
+			GameRegistry.registerBlock(tinBlock,"ExtraBlocks_TinBlock");
 			
 			LanguageRegistry.addName(tinOre, "Tin Ore");
 			LanguageRegistry.addName(tinBlock, "Tin Block");
@@ -265,8 +264,8 @@ public class ExtraBlocksMain {
 		
 		proxy.registerRenderThings();
 		
-		GameRegistry.registerBlock(redstoneBlock);
-		GameRegistry.registerBlock(coalBlock);
+		GameRegistry.registerBlock(redstoneBlock,"ExtraBlocks_RedstoneBlock");
+		GameRegistry.registerBlock(coalBlock,"ExtraBlocks_CoalBlock");
 		
 		GameRegistry.registerWorldGenerator(new extraBlocksWorldGen());
 		

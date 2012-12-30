@@ -1,6 +1,6 @@
-package ExtraBlocks.common;
+package extraBlocks;
 
-import net.minecraft.src.Item;
+import net.minecraft.item.Item;
 
 public class ItemCopperIngot extends Item {
 

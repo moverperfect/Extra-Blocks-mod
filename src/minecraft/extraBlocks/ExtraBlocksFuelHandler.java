@@ -1,6 +1,6 @@
-package ExtraBlocks.common;
+package extraBlocks;
 
-import net.minecraft.src.ItemStack;
+import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;
 
 public class ExtraBlocksFuelHandler implements IFuelHandler {
