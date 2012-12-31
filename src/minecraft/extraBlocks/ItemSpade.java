@@ -1,8 +1,8 @@
-package ExtraBlocks.common;
+package extraBlocks;
 
-import net.minecraft.src.Block;
-import net.minecraft.src.EnumToolMaterial;
-import net.minecraft.src.ItemTool;
+import net.minecraft.block.Block;
+import net.minecraft.item.EnumToolMaterial;
+import net.minecraft.item.ItemTool;
 
 public class ItemSpade extends ItemTool
 {
