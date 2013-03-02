@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
@@ -71,7 +71,8 @@ public class ItemHoe extends Item
     /**
      * Returns True is the item is renderer in full 3D when hold.
      */
-    public boolean isFull3D()
+    @Override
+	public boolean isFull3D()
     {
         return true;
     }
@@ -80,6 +81,7 @@ public class ItemHoe extends Item
     {
         return this.theToolMaterial.toString();
     }
+	@Override
 	public String getTextureFile(){
 		return "/textures/Items.png";
 	}

@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 public class CommonProxyExtraBlocks
 {

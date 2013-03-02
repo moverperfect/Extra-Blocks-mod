@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;

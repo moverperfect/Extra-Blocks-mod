@@ -1,18 +1,18 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockTinOre extends Block {
+public class BlockCopperOre extends Block {
 
-	public BlockTinOre(int par1, int par2) {
+	public BlockCopperOre(int par1, int par2) {
 		super(par1, par2, Material.rock);
-		
-		setStepSound(soundStoneFootstep);
-	}
+		setStepSound(stepSound);
+	};
 	
+	@Override
 	public String getTextureFile(){
 		return "/textures/Blocks.png";
 	}
 
-}
+};

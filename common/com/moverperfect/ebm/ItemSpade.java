@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
@@ -17,11 +17,13 @@ public class ItemSpade extends ItemTool
     /**
      * Returns if the item (tool) can harvest results from the block type.
      */
-    public boolean canHarvestBlock(Block par1Block)
+    @Override
+	public boolean canHarvestBlock(Block par1Block)
     {
         return par1Block == Block.snow ? true : par1Block == Block.blockSnow;
     }
     
+	@Override
 	public String getTextureFile(){
 		return "/textures/Items.png";
 	}

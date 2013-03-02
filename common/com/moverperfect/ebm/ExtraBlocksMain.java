@@ -1,4 +1,4 @@
-package extraBlocks;
+package com.moverperfect.ebm;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -29,7 +29,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ExtraBlocksMain {
 	
-	@SidedProxy(clientSide = "extraBlocks.ClientProxyExtraBlocks", serverSide = "ExtraBlocks.CommonProxyExtraBlocks")
+	@SidedProxy(clientSide = "com.moverperfect.ebm.ClientProxyExtraBlocks", serverSide = "com.moverperfect.ebm.CommonProxyExtraBlocks")
 	public static CommonProxyExtraBlocks proxy;	
 	
 	@Instance("extrablocks")
