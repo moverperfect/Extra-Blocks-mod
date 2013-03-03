@@ -1,4 +1,4 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;

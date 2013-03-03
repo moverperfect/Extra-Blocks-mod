@@ -1,4 +1,4 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -11,7 +11,7 @@ public class ItemAxe extends ItemTool
     /** an array of the blocks this axe is effective against */
     public static final Block[] blocksEffectiveAgainst = new Block[] {Block.planks, Block.bookShelf, Block.wood, Block.chest, Block.stoneDoubleSlab, Block.stoneSingleSlab, Block.pumpkin, Block.pumpkinLantern};
 
-    protected ItemAxe(int par1, EnumToolMaterial par2EnumToolMaterial)
+    public ItemAxe(int par1, EnumToolMaterial par2EnumToolMaterial)
     {
         super(par1, 3, par2EnumToolMaterial, blocksEffectiveAgainst);
     }

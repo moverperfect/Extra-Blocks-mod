@@ -1,4 +1,6 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.core.handlers;
+
+import com.moverperfect.ebm.ExtraBlocksMain;
 
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.IFuelHandler;

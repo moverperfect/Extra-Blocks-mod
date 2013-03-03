@@ -1,11 +1,12 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.item;
 
 import net.minecraft.item.Item;
 
-public class ItemCopperIngot extends Item {
+public class ItemTinIngot extends Item {
 
-	protected ItemCopperIngot(int par1) {
+	public ItemTinIngot(int par1) {
 		super(par1);
+		
 	}
 	
 	@Override

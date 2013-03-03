@@ -1,4 +1,4 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

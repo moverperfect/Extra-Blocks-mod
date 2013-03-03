@@ -1,13 +1,15 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.core.handlers;
 
 import java.util.Random;
+
+import com.moverperfect.ebm.ExtraBlocksMain;
 
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
-public class extraBlocksWorldGen implements IWorldGenerator {
+public class ExtraBlocksWorldGen implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {

@@ -1,8 +1,8 @@
-package com.moverperfect.ebm;
+package com.moverperfect.ebm.core.proxy;
 
 import net.minecraftforge.client.MinecraftForgeClient;
 
-public class ClientProxyExtraBlocks extends CommonProxyExtraBlocks
+public class ClientProxy extends CommonProxy
 {
 @Override
 public void registerRenderThings()

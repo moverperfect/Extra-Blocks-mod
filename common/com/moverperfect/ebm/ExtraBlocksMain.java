@@ -1,5 +1,23 @@
 package com.moverperfect.ebm;
 
+import com.moverperfect.ebm.block.BlockCoalBlock;
+import com.moverperfect.ebm.block.BlockCopperBlock;
+import com.moverperfect.ebm.block.BlockCopperOre;
+import com.moverperfect.ebm.block.BlockRedstoneBlock;
+import com.moverperfect.ebm.block.BlockTinBlock;
+import com.moverperfect.ebm.block.BlockTinOre;
+import com.moverperfect.ebm.core.handlers.ExtraBlocksFuelHandler;
+import com.moverperfect.ebm.core.handlers.ExtraBlocksWorldGen;
+import com.moverperfect.ebm.core.proxy.CommonProxy;
+import com.moverperfect.ebm.core.proxy.ClientProxy;
+import com.moverperfect.ebm.item.ItemAxe;
+import com.moverperfect.ebm.item.ItemCopperIngot;
+import com.moverperfect.ebm.item.ItemHoe;
+import com.moverperfect.ebm.item.ItemPickaxe;
+import com.moverperfect.ebm.item.ItemSpade;
+import com.moverperfect.ebm.item.ItemSword;
+import com.moverperfect.ebm.item.ItemTinIngot;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
@@ -29,8 +47,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ExtraBlocksMain {
 	
-	@SidedProxy(clientSide = "com.moverperfect.ebm.ClientProxyExtraBlocks", serverSide = "com.moverperfect.ebm.CommonProxyExtraBlocks")
-	public static CommonProxyExtraBlocks proxy;	
+	@SidedProxy(clientSide = "com.moverperfect.ebm.core.proxy.ClientProxy", serverSide = "com.moverperfect.ebm.core.proxy.CommonProxy")
+	public static CommonProxy proxy;	
 	
 	@Instance("extrablocks")
 	public static ExtraBlocksMain instance;
@@ -267,7 +285,7 @@ public class ExtraBlocksMain {
 		GameRegistry.registerBlock(redstoneBlock,"ExtraBlocks_RedstoneBlock");
 		GameRegistry.registerBlock(coalBlock,"ExtraBlocks_CoalBlock");
 		
-		GameRegistry.registerWorldGenerator(new extraBlocksWorldGen());
+		GameRegistry.registerWorldGenerator(new ExtraBlocksWorldGen());
 		
 		LanguageRegistry.addName(redstoneBlock, "Redstone Block");
 		LanguageRegistry.addName(coalBlock, "Coal Block");
