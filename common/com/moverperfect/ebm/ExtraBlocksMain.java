@@ -9,7 +9,7 @@ import com.moverperfect.ebm.block.BlockTinOre;
 import com.moverperfect.ebm.core.handlers.ExtraBlocksFuelHandler;
 import com.moverperfect.ebm.core.handlers.ExtraBlocksWorldGen;
 import com.moverperfect.ebm.core.proxy.CommonProxy;
-import com.moverperfect.ebm.core.proxy.ClientProxy;
+import com.moverperfect.ebm.creativetab.CreativeTabEBM;
 import com.moverperfect.ebm.item.ItemAxe;
 import com.moverperfect.ebm.item.ItemCopperIngot;
 import com.moverperfect.ebm.item.ItemHoe;
@@ -17,6 +17,7 @@ import com.moverperfect.ebm.item.ItemPickaxe;
 import com.moverperfect.ebm.item.ItemSpade;
 import com.moverperfect.ebm.item.ItemSword;
 import com.moverperfect.ebm.item.ItemTinIngot;
+import com.moverperfect.ebm.lib.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -43,15 +44,17 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod (modid = "ExtraBlocksMod", name = "ExtraBlocksMod", version = "0.4.0")
+@Mod (modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 
 public class ExtraBlocksMain {
 	
-	@SidedProxy(clientSide = "com.moverperfect.ebm.core.proxy.ClientProxy", serverSide = "com.moverperfect.ebm.core.proxy.CommonProxy")
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;	
 	
-	@Instance("extrablocks")
+	@Instance(Reference.MOD_ID)
 	public static ExtraBlocksMain instance;
+	
+	public static CreativeTabs tabsEBM = new CreativeTabEBM(CreativeTabs.getNextID(), "ExtraBlocksMod");
 	
 	public static int copperOreID;
 	public static int copperBlockID;
