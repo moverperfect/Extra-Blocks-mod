@@ -1,5 +1,15 @@
 package com.moverperfect.ebm.lib;
 
+/**
+ * Extra-Blocks-Mod
+ * 
+ * Reference
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
+
 public class Reference {
 
     /* Debug Mode On-Off */
