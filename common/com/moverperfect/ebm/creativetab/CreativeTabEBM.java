@@ -1,11 +1,21 @@
 package com.moverperfect.ebm.creativetab;
 
-import com.moverperfect.ebm.ExtraBlocksMain;
+import com.moverperfect.ebm.lib.BlockIds;
 
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * CreativeTabEBM
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class CreativeTabEBM extends CreativeTabs {
 
@@ -20,7 +30,7 @@ public class CreativeTabEBM extends CreativeTabs {
      */
     public int getTabIconItemIndex() {
 
-        return 1;
+        return BlockIds.COAL_BLOCK;
     }
 
 }
