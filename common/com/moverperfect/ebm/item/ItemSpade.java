@@ -1,8 +1,19 @@
 package com.moverperfect.ebm.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemTool;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * ItemSpade
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class ItemSpade extends ItemTool
 {
@@ -23,8 +34,10 @@ public class ItemSpade extends ItemTool
         return par1Block == Block.snow ? true : par1Block == Block.blockSnow;
     }
     
-	@Override
-	public String getTextureFile(){
-		return "/textures/Items.png";
-	}
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon("ebm:" + this.getUnlocalizedName().substring(5));
+    }
+    
 }

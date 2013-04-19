@@ -1,6 +1,7 @@
 package com.moverperfect.ebm.item;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -12,6 +13,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * ItemSword
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class ItemSword extends Item
 {
@@ -26,11 +37,6 @@ public class ItemSword extends Item
         this.weaponDamage = 4 + par2EnumToolMaterial.getDamageVsEntity();
     }
     
-	@Override
-	public String getTextureFile(){
-		return "/textures/Items.png";
-	}
-
     /**
      * Returns the strength of the stack against a given block. 1.0F base, (Quality+1)*2 if correct blocktype, 1.5F if
      * sword
@@ -129,8 +135,18 @@ public class ItemSword extends Item
         return this.toolMaterial.getEnchantability();
     }
 
-    public String func_77825_f()
+    /**
+     * Return the name for this tool's material.
+     */
+    public String getToolMaterialName()
     {
         return this.toolMaterial.toString();
     }
-}
+
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon("ebm:" + this.getUnlocalizedName().substring(5));
+    }
+
+    }

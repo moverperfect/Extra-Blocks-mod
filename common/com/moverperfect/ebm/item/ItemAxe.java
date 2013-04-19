@@ -2,9 +2,20 @@ package com.moverperfect.ebm.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * ItemAxe
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class ItemAxe extends ItemTool
 {
@@ -26,8 +37,9 @@ public class ItemAxe extends ItemTool
         return par2Block != null && par2Block.blockMaterial == Material.wood ? this.efficiencyOnProperMaterial : super.getStrVsBlock(par1ItemStack, par2Block);
     }
     
-	@Override
-	public String getTextureFile(){
-		return "/textures/Items.png";
-	}
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon("ebm:" + this.getUnlocalizedName().substring(5));
+    }
 }

@@ -1,8 +1,19 @@
 package com.moverperfect.ebm.item;
 
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * ItemHoe
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class ItemHoe extends Item
 {
@@ -81,8 +92,10 @@ public class ItemHoe extends Item
     {
         return this.theToolMaterial.toString();
     }
-	@Override
-	public String getTextureFile(){
-		return "/textures/Items.png";
-	}
+    
+    @Override
+    public void registerIcons(IconRegister par1IconRegister)
+    {
+        this.itemIcon = par1IconRegister.registerIcon("ebm:" + this.getUnlocalizedName().substring(5));
+    }
 }
