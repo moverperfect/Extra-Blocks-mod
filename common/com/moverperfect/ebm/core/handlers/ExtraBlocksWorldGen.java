@@ -2,12 +2,19 @@ package com.moverperfect.ebm.core.handlers;
 
 import java.util.Random;
 
-import com.moverperfect.ebm.ExtraBlocksMain;
-
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
+
+/**
+ * Extra-Blocks-Mod
+ * 
+ * ExtraBlocksWorldGen
+ * 
+ * @author Moverperfect
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ * 
+ */
 
 public class ExtraBlocksWorldGen implements IWorldGenerator {
 
@@ -22,7 +29,7 @@ public class ExtraBlocksWorldGen implements IWorldGenerator {
 	
 	
 	public void generateSurface(World world, Random random, int blockX, int blockZ){
-		{
+		{/*
 			if (ExtraBlocksMain.copperOreBool) {
 				for (int i = 1; i < 10;i++) {
 					
@@ -41,6 +48,7 @@ public class ExtraBlocksWorldGen implements IWorldGenerator {
 					(new WorldGenMinable(ExtraBlocksMain.tinOreID, 10)).generate(world, random, Xcoord, Ycoord, Zcoord);
 				}
 			}
+			*/
 		}
 }	
 	public void generateNether(World world, Random random, int blockX, int blockZ){
