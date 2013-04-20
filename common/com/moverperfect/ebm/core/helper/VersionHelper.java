@@ -82,7 +82,7 @@ public class VersionHelper implements Runnable {
                         ConfigurationHandler.set(Configuration.CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_CONFIGNAME, remoteVersion);
                     }
 
-                    if (remoteVersion.equals(Reference.VERSION)) {
+                    if (remoteVersion.equals(Reference.VERSION+"-"+Reference.BUILD_NUMBER)) {
                         result = CURRENT;
                     }
                     else {
