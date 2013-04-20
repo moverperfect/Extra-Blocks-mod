@@ -11,8 +11,10 @@ import net.minecraft.block.Block;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.CraftingManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 /**
  * Extra-Blocks-Mod
@@ -226,6 +228,7 @@ public class ModItems {
         OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
     }
 
+    @SuppressWarnings("unchecked")
     private static void metalTools() {
 		//if (ConfigurationSettings.METAL_TOOLS) {
 		    copperSword = new ItemSword(ItemIds.COPPER_SWORD, EnumToolMaterialCopper).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("swordcopper");
@@ -264,8 +267,7 @@ public class ModItems {
             GameRegistry.registerItem(copperAxe, Strings.TIN_AXE_NAME);
             GameRegistry.registerItem(copperHoe, Strings.TIN_HOE_NAME);
             
-            /* TODO
-            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSword), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSword,1), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotCopper", ('s'), Item.stick}));
@@ -277,7 +279,6 @@ public class ModItems {
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "ingotTin", ('s'), Item.stick}));
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "ingotTin", ('s'), Item.stick}));
 
-            */
 		//}
 	}
 
