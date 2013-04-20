@@ -11,7 +11,6 @@ package com.moverperfect.ebm.lib;
  */
 
 public class BlockIds {
-	// TODO The ID's
     /* Default block ids */
     public static int COPPER_ORE_DEFAULT = 700;
     public static int COPPER_BLOCK_DEFAULT = 701;

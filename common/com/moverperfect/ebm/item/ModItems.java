@@ -88,8 +88,6 @@ public class ModItems {
 	}
 
     private static void blockTools() {
-        // TODO Register the tools, STONE
-        // TODO Set unlocalised names
         woodBlockSword = new ItemSword(ItemIds.BLOCK_TOOLS, EnumToolMaterialWood).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("swordwoodblock");
         woodBlockShovel = new ItemSpade(ItemIds.BLOCK_TOOLS+1, EnumToolMaterialWood).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("shovelwoodblock");
         woodBlockPickaxe = new ItemPickaxe(ItemIds.BLOCK_TOOLS+2, EnumToolMaterialWood).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("pickaxewoodblock");
@@ -180,8 +178,6 @@ public class ModItems {
         GameRegistry.registerItem(diamondBlockAxe,Strings.DIAMOND_BLOCK_AXE_NAME);
         GameRegistry.registerItem(diamondBlockHoe,Strings.DIAMOND_BLOCK_HOE_NAME);
 
-        // TODO Block tools recipies, STONE
-        
         GameRegistry.addRecipe(new ItemStack(woodBlockSword), new Object[]{"#","#","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
         GameRegistry.addRecipe(new ItemStack(woodBlockShovel),new Object[]{"#","s","s",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
         GameRegistry.addRecipe(new ItemStack(woodBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), Block.wood, ('s'),Item.stick});
