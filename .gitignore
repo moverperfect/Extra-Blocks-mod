@@ -2,3 +2,4 @@
 *.bat
 *.xml
 *.properties
+!version.xml
