@@ -78,7 +78,7 @@ public class ExtraBlocksMain {
 	public void preInit(FMLPreInitializationEvent event) {
 		System.out.println("ExtraBlocks Loading config file");
 		
-		ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath()  + "\\config\\" + Reference.MOD_ID + ".cfg"));
+		ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + "\\" + Reference.MOD_ID + ".cfg"));
 		
 		LogHelper.init();
 	      
