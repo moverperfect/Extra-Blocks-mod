@@ -224,11 +224,6 @@ public class ModItems {
 
         OreDictionary.registerOre("ingotTin", new ItemStack(tinIngot));
         OreDictionary.registerOre("ingotCopper", new ItemStack(copperIngot));
-        
-        
-        // TODO
-        //CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (copperIngot,9), new Object[]{"blockCopper"}));
-        //CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (tinIngot,9), new Object[]{tinBlock}));
     }
 
     private static void metalTools() {
