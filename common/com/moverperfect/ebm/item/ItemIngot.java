@@ -6,16 +6,16 @@ import net.minecraft.item.Item;
 /**
  * Extra-Blocks-Mod
  * 
- * ItemCopperIngot
+ * ItemIngot
  * 
  * @author Moverperfect
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  * 
  */
 
-public class ItemCopperIngot extends Item {
+public class ItemIngot extends Item {
 
-	public ItemCopperIngot(int par1) {
+	public ItemIngot(int par1) {
 		super(par1);
 	}
 	

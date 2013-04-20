@@ -213,8 +213,8 @@ public class ModItems {
     }
     
     private static void metals() {
-        tinIngot = new ItemTinIngot(ItemIds.TIN_INGOT).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("ingottin");
-        copperIngot = new ItemCopperIngot(ItemIds.COPPER_INGOT).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("ingotcopper");
+        tinIngot = new ItemIngot(ItemIds.TIN_INGOT).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("ingottin");
+        copperIngot = new ItemIngot(ItemIds.COPPER_INGOT).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("ingotcopper");
         
         LanguageRegistry.addName(tinIngot,Strings.TIN_INGOT_NAME);
         LanguageRegistry.addName(copperIngot, Strings.COPPER_INGOT_NAME);

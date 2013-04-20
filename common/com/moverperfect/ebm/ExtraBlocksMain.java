@@ -43,9 +43,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ExtraBlocksMain {
 	
-    // TODO Single file for ingots
-    
-    
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;	
 	
