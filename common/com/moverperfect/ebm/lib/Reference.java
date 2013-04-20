@@ -17,15 +17,15 @@ public class Reference {
 
     /* General Mod related constants */
     public static final String MOD_ID = "EBM";
-    public static final String MOD_NAME = "ExtraBlockMod";
-    public static final String VERSION = "@VERSION@";
+    public static final String MOD_NAME = "ExtraBlocksmod";
+    public static final String VERSION_NUMBER = "0.4.0";
     public static final String CHANNEL_NAME = MOD_ID;
+    public static final String DEPENDENCIES = "required-after:Forge@[7.7.1.650,)";
     public static final int SECOND_IN_TICKS = 20;
     public static final int SHIFTED_ID_RANGE_CORRECTION = 256;
     public static final String SERVER_PROXY_CLASS = "com.moverperfect.ebm.core.proxy.CommonProxy";
     public static final String CLIENT_PROXY_CLASS = "com.moverperfect.ebm.core.proxy.ClientProxy";
     public static final int VERSION_CHECK_ATTEMPTS = 3;
-
-    public static final String BUILD_NUMBER = "@BUILD_NUMBER@";
+    public static final String BUILD_NUMBER = "1";
 
 }

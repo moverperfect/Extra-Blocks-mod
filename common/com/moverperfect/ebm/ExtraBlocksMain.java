@@ -14,6 +14,7 @@ import com.moverperfect.ebm.core.proxy.CommonProxy;
 import com.moverperfect.ebm.creativetab.CreativeTabEBM;
 import com.moverperfect.ebm.item.ModItems;
 import com.moverperfect.ebm.lib.Reference;
+import com.moverperfect.ebm.core.handlers.VersionCheckTickHandler;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
@@ -27,6 +28,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 /**
  * Extra-Blocks-Mod
@@ -39,7 +42,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  */
 
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
-@Mod (modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod (modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER)
 
 public class ExtraBlocksMain {
 	
@@ -88,7 +91,10 @@ public class ExtraBlocksMain {
         ModBlocks.initBlockRecipes();
 		
 		// TODO Version helper Needs Work 
-		VersionHelper.execute();
+        VersionHelper.execute();
+        
+        TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
+
 	}
 	
 	// Say i have been initialised
