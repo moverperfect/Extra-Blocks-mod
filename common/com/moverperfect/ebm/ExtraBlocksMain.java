@@ -58,15 +58,7 @@ public class ExtraBlocksMain {
 	public void load(FMLInitializationEvent event){
 		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.EBM", "en_US", "Extra Blocks");
-		
-		ModBlocks.init();
-		
-		ModItems.init();
-		
-		ModBlocks.furnace();
-		
-		ModBlocks.initBlockRecipes();
-		
+
 							
 		// Non-metal blocks
 		proxy.registerRenderThings();
@@ -89,8 +81,16 @@ public class ExtraBlocksMain {
 		ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath()  + "\\config\\" + Reference.MOD_ID + ".cfg"));
 		
 		LogHelper.init();
+	      
+        ModBlocks.init();
+        
+        ModItems.init();
+        
+        ModBlocks.furnace();
+        
+        ModBlocks.initBlockRecipes();
 		
-		// TODO Needs Work 
+		// TODO Version helper Needs Work 
 		VersionHelper.execute();
 	}
 	
