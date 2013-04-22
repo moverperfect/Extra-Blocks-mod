@@ -161,7 +161,7 @@ public class VersionHelper implements Runnable {
 
     public static String getResultMessageForClient() {
 
-        String returnString = "There is a new version available for @MOD_NAME@ for @MINECRAFT_VERSION@, download @REMOTE_MOD_VERSION@ at @MOD_UPDATE_LOCATION@";
+        String returnString = "Version @REMOTE_MOD_VERSION@ is now available for @MOD_NAME@, download it here @MOD_UPDATE_LOCATION@";
         returnString = returnString.replace("@MOD_NAME@", Colours.TEXT_COLOUR_PREFIX_YELLOW + Reference.MOD_NAME + Colours.TEXT_COLOUR_PREFIX_WHITE);
         returnString = returnString.replace("@REMOTE_MOD_VERSION@", Colours.TEXT_COLOUR_PREFIX_YELLOW + VersionHelper.remoteVersion + Colours.TEXT_COLOUR_PREFIX_WHITE);
         returnString = returnString.replace("@MINECRAFT_VERSION@", Colours.TEXT_COLOUR_PREFIX_YELLOW + Loader.instance().getMCVersionString() + Colours.TEXT_COLOUR_PREFIX_WHITE);
