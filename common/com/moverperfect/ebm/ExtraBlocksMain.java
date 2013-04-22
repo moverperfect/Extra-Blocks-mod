@@ -90,7 +90,6 @@ public class ExtraBlocksMain {
         
         ModBlocks.initBlockRecipes();
 		
-		// TODO Version helper Needs Work 
         VersionHelper.execute();
         
         TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
