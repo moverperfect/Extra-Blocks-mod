@@ -4,13 +4,12 @@
 	"name": "ExtraBlocksMod",
 	"description": "More blocks/items for minecraft",
 	"version": "@VERSION@",
-	"credits": "moverperfect",
-	"authors": ["moverperfect"],
+	"credits": "moverperfect, jshredder11",
+	"authors": ["moverperfect","jshredder11"],
 	"logoFile": "",
 	"url": "www.github.com/moverperfect/Extra-Blocks-mod/",
 	"updateUrl": "",
 	"parent": "",
-	"screenshots": [],
-	"dependencies": ["mod_MinecraftForge"]
+	"screenshots": []
 }
 ]
