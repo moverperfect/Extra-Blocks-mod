@@ -18,7 +18,7 @@ public class Reference {
     /* General Mod related constants */
     public static final String MOD_ID = "EBM";
     public static final String MOD_NAME = "ExtraBlocksmod";
-    public static final String VERSION_NUMBER = "@VERSION";
+    public static final String VERSION_NUMBER = "@VERSION@";
     public static final String CHANNEL_NAME = MOD_ID;
     public static final String DEPENDENCIES = "required-after:Forge@[7.7.1.650,)";
     public static final int SECOND_IN_TICKS = 20;
