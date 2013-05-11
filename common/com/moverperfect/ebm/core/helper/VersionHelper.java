@@ -112,7 +112,7 @@ public class VersionHelper implements Runnable {
 
     private static String getVersionForCheck() {
 
-        return Reference.VERSION_NUMBER + "-" + Reference.BUILD_NUMBER;
+        return Reference.VERSION_NUMBER;
     }
 
     public static void logResult() {

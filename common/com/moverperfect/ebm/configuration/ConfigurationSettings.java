@@ -23,6 +23,8 @@ public class ConfigurationSettings {
     public static final String LAST_DISCOVERED_VERSION_CONFIGNAME = "version_check.last_discovered_version";
     public static final String LAST_DISCOVERED_VERSION_DEFAULT = "";
     
+    public static boolean NEW_VERSION_SHOWN = true;
+    
     /*
      * Recipe configuration settings
      */

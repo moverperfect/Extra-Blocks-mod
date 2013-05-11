@@ -3,7 +3,7 @@
 	"modid": "ExtraBlocksMod",
 	"name": "ExtraBlocksMod",
 	"description": "More blocks/items for minecraft",
-	"version": "@VERSION@",
+	"version": "@VERSION@-@BUILD_NUMBER@",
 	"credits": "moverperfect, jshredder11",
 	"authors": ["moverperfect","jshredder11"],
 	"logoFile": "",
