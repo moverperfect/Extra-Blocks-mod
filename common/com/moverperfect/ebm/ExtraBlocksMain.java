@@ -90,6 +90,8 @@ public class ExtraBlocksMain {
         
         ModBlocks.initBlockRecipes();
 		
+        ModItems.micJunk();
+        
         VersionHelper.execute();
         
         TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);

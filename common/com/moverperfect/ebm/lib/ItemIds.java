@@ -13,6 +13,8 @@ package com.moverperfect.ebm.lib;
 public class ItemIds {
 
     /* Default item ids */
+    public static int FLINT_AND_STEEL_DEFAULT = 7037;
+    
     public static int COPPER_INGOT_DEFAULT = 7000;
     public static int COPPER_SWORD_DEFAULT = 7001;
     public static int COPPER_SHOVEL_DEFAULT = 7002;
@@ -30,6 +32,8 @@ public class ItemIds {
     public static int BLOCK_TOOLS_DEFAULT = 7012;
 
     /* Current item ids */
+    public static int FLINT_AND_STEEL;
+    
     public static int COPPER_INGOT;
     public static int COPPER_SWORD;
     public static int COPPER_SHOVEL;

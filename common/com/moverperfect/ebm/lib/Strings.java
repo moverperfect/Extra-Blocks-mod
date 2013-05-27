@@ -24,6 +24,9 @@ public class Strings {
     public static final String GENERAL_ERROR_MESSAGE = "version.general_error";
     public static final String FINAL_ERROR_MESSAGE = "version.final_error";
     public static final String MC_VERSION_NOT_FOUND = "version.mc_version_not_found";
+    
+    /* Mic Junk constants */
+    public static final String FLINT_AND_STEEL_NAME = "Flint and Steel block";
    
     /* Block name constants */
     public static final String COPPER_ORE_NAME = "Copper Ore";

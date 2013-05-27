@@ -57,6 +57,8 @@ public class ConfigurationHandler {
 
             
             /* Item configs */
+            ItemIds.FLINT_AND_STEEL = configuration.getItem(Strings.FLINT_AND_STEEL_NAME,ItemIds.FLINT_AND_STEEL_DEFAULT).getInt(ItemIds.FLINT_AND_STEEL_DEFAULT);
+            
             ItemIds.COPPER_INGOT = configuration.getItem(Strings.COPPER_INGOT_NAME, ItemIds.COPPER_INGOT_DEFAULT).getInt(ItemIds.COPPER_INGOT_DEFAULT);
             ItemIds.COPPER_SWORD = configuration.getItem(Strings.COPPER_SWORD_NAME, ItemIds.COPPER_SWORD_DEFAULT).getInt(ItemIds.COPPER_SWORD_DEFAULT);
             ItemIds.COPPER_SHOVEL = configuration.getItem(Strings.COPPER_SHOVEL_NAME, ItemIds.COPPER_SHOVEL_DEFAULT).getInt(ItemIds.COPPER_SHOVEL_DEFAULT);
