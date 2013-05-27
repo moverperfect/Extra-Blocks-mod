@@ -1,6 +1,7 @@
 package com.moverperfect.ebm.item;
 
 import com.moverperfect.ebm.ExtraBlocksMain;
+import com.moverperfect.ebm.block.ModBlocks;
 import com.moverperfect.ebm.configuration.ConfigurationSettings;
 import com.moverperfect.ebm.lib.ItemIds;
 import com.moverperfect.ebm.lib.Strings;

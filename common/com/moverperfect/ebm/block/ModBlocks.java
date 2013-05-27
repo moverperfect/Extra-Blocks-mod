@@ -35,6 +35,7 @@ public class ModBlocks {
     public static Block tinOre;
     public static Block tinBlock;
     public static Block coalBlock;
+    public static Block flintBlock;
 
     public static void init() {
         
@@ -62,6 +63,11 @@ public class ModBlocks {
         
         }
         
+        flintBlock = new BlockFlintBlock(BlockIds.FLINT_BLOCK).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("blockflint");
+        GameRegistry.registerBlock(flintBlock, Strings.FLINT_BLOCK_NAME);
+        LanguageRegistry.addName(flintBlock, Strings.FLINT_BLOCK_NAME);
+        OreDictionary.registerOre("flintblock", new ItemStack(flintBlock));
+        
         coalBlock = new BlockCoalBlock(BlockIds.COAL_BLOCK).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("blockcoal");
         GameRegistry.registerBlock(coalBlock,Strings.COAL_BLOCK_NAME);
         LanguageRegistry.addName(coalBlock, Strings.COAL_BLOCK_NAME);
@@ -79,6 +85,10 @@ public class ModBlocks {
             CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (ModItems.copperIngot,9), "blockCopper"));
             CraftingManager.getInstance().getRecipeList().add(new ShapelessOreRecipe(new ItemStack (ModItems.tinIngot,9), "blockTin"));
         }
+        
+        GameRegistry.addRecipe(new ItemStack (flintBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.flint});
+        GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{flintBlock});
+        
         GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
         GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
         

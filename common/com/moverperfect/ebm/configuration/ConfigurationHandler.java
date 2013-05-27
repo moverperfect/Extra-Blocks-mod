@@ -54,7 +54,8 @@ public class ConfigurationHandler {
             BlockIds.TIN_ORE = configuration.getBlock(Strings.TIN_ORE_NAME, BlockIds.TIN_ORE_DEFAULT).getInt(BlockIds.TIN_ORE_DEFAULT);
             BlockIds.TIN_BLOCK = configuration.getBlock(Strings.TIN_BLOCK_NAME, BlockIds.TIN_BLOCK_DEFAULT).getInt(BlockIds.TIN_BLOCK_DEFAULT);
             BlockIds.COAL_BLOCK = configuration.getBlock(Strings.COAL_BLOCK_NAME, BlockIds.COAL_BLOCK_DEFAULT).getInt(BlockIds.COAL_BLOCK_DEFAULT);
-
+            
+            BlockIds.FLINT_BLOCK = configuration.getBlock(Strings.FLINT_BLOCK_NAME, BlockIds.FLINT_BLOCK_DEFAULT).getInt(BlockIds.FLINT_BLOCK_DEFAULT);
             
             /* Item configs */
             ItemIds.FLINT_AND_STEEL = configuration.getItem(Strings.FLINT_AND_STEEL_NAME,ItemIds.FLINT_AND_STEEL_DEFAULT).getInt(ItemIds.FLINT_AND_STEEL_DEFAULT);

@@ -79,4 +79,5 @@ public class Strings {
     public static final String DIAMOND_BLOCK_PICKAXE_NAME = "Diamond Block Pickaxe";
     public static final String DIAMOND_BLOCK_AXE_NAME = "Diamond Block Axe";
     public static final String DIAMOND_BLOCK_HOE_NAME = "Diamond Block Hoe";
+    public static final String FLINT_BLOCK_NAME = "Flint Block";
 }

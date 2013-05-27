@@ -18,6 +18,7 @@ public class BlockIds {
     public static int TIN_BLOCK_DEFAULT = 703;
     public static int REDSTONE_BLOCK_DEFAULT = 704;
     public static int COAL_BLOCK_DEFAULT = 705;
+    public static int FLINT_BLOCK_DEFAULT = 706;
        
 
     /* Current block ids */
@@ -27,5 +28,6 @@ public class BlockIds {
     public static int TIN_BLOCK;
     public static int REDSTONE_BLOCK;
     public static int COAL_BLOCK;
+    public static int FLINT_BLOCK;
 
 }
