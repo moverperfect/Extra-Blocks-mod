@@ -3,13 +3,13 @@ package com.moverperfect.ebm;
 import java.io.File;
 
 import net.minecraft.creativetab.CreativeTabs;
-
 import com.moverperfect.ebm.block.ModBlocks;
 import com.moverperfect.ebm.configuration.ConfigurationHandler;
 import com.moverperfect.ebm.core.handlers.ExtraBlocksFuelHandler;
 import com.moverperfect.ebm.core.handlers.ExtraBlocksWorldGen;
 import com.moverperfect.ebm.core.helper.LogHelper;
 import com.moverperfect.ebm.core.helper.VersionHelper;
+import com.moverperfect.ebm.core.proxy.ClientProxy;
 import com.moverperfect.ebm.core.proxy.CommonProxy;
 import com.moverperfect.ebm.creativetab.CreativeTabEBM;
 import com.moverperfect.ebm.item.ModItems;
@@ -68,7 +68,6 @@ public class ExtraBlocksMain {
 		
 		//if(seedsToBreadBool) {GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});};
 		
-		
 		// Register the fuel handler
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
 	};
@@ -95,7 +94,6 @@ public class ExtraBlocksMain {
         VersionHelper.execute();
         
         TickRegistry.registerTickHandler(new VersionCheckTickHandler(), Side.CLIENT);
-
 	}
 	
 	// Say i have been initialised
