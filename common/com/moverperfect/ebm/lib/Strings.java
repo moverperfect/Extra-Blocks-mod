@@ -27,6 +27,9 @@ public class Strings {
     
     /* Mic Junk constants */
     public static final String FLINT_AND_STEEL_NAME = "Flint and Steel block";
+    
+    public static final String DROP_SAP_NAME = "Drop of sap";
+    public static final String BALL_SAP_NAME = "Ball of sap";
    
     /* Block name constants */
     public static final String COPPER_ORE_NAME = "Copper Ore";

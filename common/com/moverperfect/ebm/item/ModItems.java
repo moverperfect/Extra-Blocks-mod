@@ -84,7 +84,9 @@ public class ModItems {
     public static Item goldBlockHoe;
     
     public static Item flintAndSteelBlock;
-
+    public static Item dropSap;
+    public static Item ballSap;
+    
 	public static void init() {
 		metals();
 	    metalTools();
@@ -94,11 +96,24 @@ public class ModItems {
     public static void micJunk() {
         flintAndSteelBlock = new ItemFlintAndSteel(ItemIds.FLINT_AND_STEEL).setUnlocalizedName("flintandsteelblock");
         
+        dropSap = new ItemSap(ItemIds.DROP_SAP).setUnlocalizedName("sapdrop");
+        ballSap = new ItemSap(ItemIds.BALL_SAP).setUnlocalizedName("ballsap");
+        
         LanguageRegistry.addName(flintAndSteelBlock, Strings.FLINT_AND_STEEL_NAME);
+        
+        LanguageRegistry.addName(dropSap, Strings.DROP_SAP_NAME);
+        LanguageRegistry.addName(ballSap, Strings.BALL_SAP_NAME);
         
         GameRegistry.registerItem(flintAndSteelBlock, Strings.FLINT_AND_STEEL_NAME);
         
+        GameRegistry.registerItem(dropSap, Strings.DROP_SAP_NAME);
+        GameRegistry.registerItem(ballSap, Strings.BALL_SAP_NAME);
+        
         GameRegistry.addRecipe(new ItemStack(flintAndSteelBlock, 1), new Object[] {"A ", " B", 'A', Block.blockIron, 'B', ModBlocks.flintBlock});
+        
+        GameRegistry.addShapelessRecipe(new ItemStack(ballSap,1), new Object[]{dropSap,dropSap,dropSap,dropSap});
+        
+        GameRegistry.addSmelting(6, new ItemStack(dropSap,1), 0.1F);
     }
 
     private static void blockTools() {

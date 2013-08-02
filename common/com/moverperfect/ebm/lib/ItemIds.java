@@ -14,6 +14,8 @@ public class ItemIds {
 
     /* Default item ids */
     public static int FLINT_AND_STEEL_DEFAULT = 7037;
+    public static int DROP_SAP_DEFAULT = 7038;
+    public static int BALL_SAP_DEFAULT = 7039;
     
     public static int COPPER_INGOT_DEFAULT = 7000;
     public static int COPPER_SWORD_DEFAULT = 7001;
@@ -33,6 +35,8 @@ public class ItemIds {
 
     /* Current item ids */
     public static int FLINT_AND_STEEL;
+    public static int DROP_SAP;
+    public static int BALL_SAP;
     
     public static int COPPER_INGOT;
     public static int COPPER_SWORD;

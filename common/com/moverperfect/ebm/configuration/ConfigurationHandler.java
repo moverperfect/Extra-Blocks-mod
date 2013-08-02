@@ -75,6 +75,9 @@ public class ConfigurationHandler {
             ItemIds.TIN_HOE = configuration.getItem(Strings.TIN_HOE_NAME, ItemIds.TIN_HOE_DEFAULT).getInt(ItemIds.TIN_HOE_DEFAULT);
             
             ItemIds.BLOCK_TOOLS = configuration.getItem("Block Tools starting id (Takes 25 ids)", ItemIds.BLOCK_TOOLS_DEFAULT).getInt(ItemIds.BLOCK_TOOLS_DEFAULT);
+            
+            ItemIds.BALL_SAP = configuration.getItem(Strings.BALL_SAP_NAME,ItemIds.BALL_SAP_DEFAULT).getInt(ItemIds.BALL_SAP_DEFAULT);
+            ItemIds.DROP_SAP = configuration.getItem(Strings.DROP_SAP_NAME, ItemIds.DROP_SAP_DEFAULT).getInt(ItemIds.DROP_SAP_DEFAULT);
             configuration.save();
         }
         catch (Exception e) {
