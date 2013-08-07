@@ -66,7 +66,7 @@ public class ModBlocks {
         flintBlock = new BlockFlintBlock(BlockIds.FLINT_BLOCK).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("blockflint");
         GameRegistry.registerBlock(flintBlock, Strings.FLINT_BLOCK_NAME);
         LanguageRegistry.addName(flintBlock, Strings.FLINT_BLOCK_NAME);
-        OreDictionary.registerOre("flintblock", new ItemStack(flintBlock));
+        OreDictionary.registerOre("blockFlint", new ItemStack(flintBlock));
         
         coalBlock = new BlockCoalBlock(BlockIds.COAL_BLOCK).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("blockcoal");
         GameRegistry.registerBlock(coalBlock,Strings.COAL_BLOCK_NAME);
