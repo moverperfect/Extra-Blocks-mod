@@ -34,7 +34,6 @@ public class ModBlocks {
     public static Block copperBlock;
     public static Block tinOre;
     public static Block tinBlock;
-    public static Block coalBlock;
     public static Block flintBlock;
 
     public static void init() {
@@ -67,12 +66,6 @@ public class ModBlocks {
         GameRegistry.registerBlock(flintBlock, Strings.FLINT_BLOCK_NAME);
         LanguageRegistry.addName(flintBlock, Strings.FLINT_BLOCK_NAME);
         OreDictionary.registerOre("blockFlint", new ItemStack(flintBlock));
-        
-        coalBlock = new BlockCoalBlock(BlockIds.COAL_BLOCK).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("blockcoal");
-        GameRegistry.registerBlock(coalBlock,Strings.COAL_BLOCK_NAME);
-        LanguageRegistry.addName(coalBlock, Strings.COAL_BLOCK_NAME);
-        OreDictionary.registerOre("blockCoal", new ItemStack(coalBlock));
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -88,9 +81,6 @@ public class ModBlocks {
         
         GameRegistry.addRecipe(new ItemStack (flintBlock,1), new Object[]{"###", "###", "###", Character.valueOf('#'), Item.flint});
         GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{flintBlock});
-        
-        GameRegistry.addRecipe(new ItemStack (coalBlock,1), new Object[]{"###", "# #", "###", Character.valueOf('#'), Item.coal});
-        GameRegistry.addShapelessRecipe(new ItemStack (Item.coal,8), new Object[]{coalBlock});
         
         GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 0), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 0)});
         GameRegistry.addRecipe(new ItemStack(Block.planks, 1, 2), new Object[] {"#","#", '#', new ItemStack(Block.woodSingleSlab, 1, 2)});

@@ -53,7 +53,6 @@ public class ConfigurationHandler {
             BlockIds.COPPER_BLOCK = configuration.getBlock(Strings.COPPER_BLOCK_NAME, BlockIds.COPPER_BLOCK_DEFAULT).getInt(BlockIds.COPPER_BLOCK_DEFAULT);
             BlockIds.TIN_ORE = configuration.getBlock(Strings.TIN_ORE_NAME, BlockIds.TIN_ORE_DEFAULT).getInt(BlockIds.TIN_ORE_DEFAULT);
             BlockIds.TIN_BLOCK = configuration.getBlock(Strings.TIN_BLOCK_NAME, BlockIds.TIN_BLOCK_DEFAULT).getInt(BlockIds.TIN_BLOCK_DEFAULT);
-            BlockIds.COAL_BLOCK = configuration.getBlock(Strings.COAL_BLOCK_NAME, BlockIds.COAL_BLOCK_DEFAULT).getInt(BlockIds.COAL_BLOCK_DEFAULT);
             
             BlockIds.FLINT_BLOCK = configuration.getBlock(Strings.FLINT_BLOCK_NAME, BlockIds.FLINT_BLOCK_DEFAULT).getInt(BlockIds.FLINT_BLOCK_DEFAULT);
             
@@ -75,6 +74,7 @@ public class ConfigurationHandler {
             ItemIds.TIN_HOE = configuration.getItem(Strings.TIN_HOE_NAME, ItemIds.TIN_HOE_DEFAULT).getInt(ItemIds.TIN_HOE_DEFAULT);
             
             ItemIds.BLOCK_TOOLS = configuration.getItem("Block Tools starting id (Takes 25 ids)", ItemIds.BLOCK_TOOLS_DEFAULT).getInt(ItemIds.BLOCK_TOOLS_DEFAULT);
+            ItemIds.BLOCK_METAL_TOOLS = configuration.getItem("Block Copper and Tin tools(10 ids)", ItemIds.BLOCK_METAL_TOOLS_DEFAULT).getInt(ItemIds.BLOCK_METAL_TOOLS_DEFAULT);
             
             ItemIds.BALL_SAP = configuration.getItem(Strings.BALL_SAP_NAME,ItemIds.BALL_SAP_DEFAULT).getInt(ItemIds.BALL_SAP_DEFAULT);
             ItemIds.DROP_SAP = configuration.getItem(Strings.DROP_SAP_NAME, ItemIds.DROP_SAP_DEFAULT).getInt(ItemIds.DROP_SAP_DEFAULT);

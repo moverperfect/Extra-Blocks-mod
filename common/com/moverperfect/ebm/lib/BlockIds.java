@@ -16,8 +16,6 @@ public class BlockIds {
     public static int COPPER_BLOCK_DEFAULT = 701;
     public static int TIN_ORE_DEFAULT = 702;
     public static int TIN_BLOCK_DEFAULT = 703;
-    public static int REDSTONE_BLOCK_DEFAULT = 704;
-    public static int COAL_BLOCK_DEFAULT = 705;
     public static int FLINT_BLOCK_DEFAULT = 706;
        
 
@@ -26,8 +24,6 @@ public class BlockIds {
     public static int COPPER_BLOCK;
     public static int TIN_ORE;
     public static int TIN_BLOCK;
-    public static int REDSTONE_BLOCK;
-    public static int COAL_BLOCK;
     public static int FLINT_BLOCK;
 
 }
