@@ -1,7 +1,6 @@
 package com.moverperfect.ebm.creativetab;
 
 import com.moverperfect.ebm.lib.BlockIds;
-
 import net.minecraft.creativetab.CreativeTabs;
 
 import cpw.mods.fml.relauncher.Side;
@@ -30,7 +29,7 @@ public class CreativeTabEBM extends CreativeTabs {
      */
     public int getTabIconItemIndex() {
 
-        return BlockIds.COAL_BLOCK;
+        return BlockIds.COPPER_BLOCK;
     }
 
 }
