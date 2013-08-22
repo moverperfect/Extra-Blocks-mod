@@ -47,26 +47,21 @@ import cpw.mods.fml.relauncher.Side;
 public class ExtraBlocksMain {
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-	public static CommonProxy proxy;	
+	public static CommonProxy proxy;
+	
+	public static ClientProxy cproxy;
 	
 	@Instance(Reference.MOD_ID)
 	public static ExtraBlocksMain instance;
 	
-	public static CreativeTabs tabsEBM = new CreativeTabEBM(CreativeTabs.getNextID(), Reference.MOD_ID);
+	public static final CreativeTabs tabsEBM = new CreativeTabEBM(CreativeTabs.getNextID(), "chicken");
 	
 	@Init
 	public void load(FMLInitializationEvent event){
 		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.EBM", "en_US", "Extra Blocks");
 
-							
-		// Non-metal blocks
-		proxy.registerRenderThings();
-		
 		GameRegistry.registerWorldGenerator(new ExtraBlocksWorldGen());
-		
-		
-		//if(seedsToBreadBool) {GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});};
 		
 		// Register the fuel handler
 		GameRegistry.registerFuelHandler(new ExtraBlocksFuelHandler());
