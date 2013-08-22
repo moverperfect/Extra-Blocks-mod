@@ -36,7 +36,6 @@ public class Strings {
     public static final String COPPER_BLOCK_NAME = "Copper Block";
     public static final String TIN_ORE_NAME = "Tin Ore";
     public static final String TIN_BLOCK_NAME = "Tin Block";
-    public static final String COAL_BLOCK_NAME = "Coal Block";
 
     /* Item name constants */
     public static final String COPPER_INGOT_NAME = "Copper Ingot";
@@ -52,6 +51,18 @@ public class Strings {
     public static final String TIN_PICKAXE_NAME = "Tin Pickaxe";
     public static final String TIN_AXE_NAME = "Tin Axe";
     public static final String TIN_HOE_NAME = "Tin Hoe";
+    
+    public static final String COPPER_BLOCK_SWORD_NAME = "Copper Block Sword";
+    public static final String COPPER_BLOCK_SHOVEL_NAME = "Copper Block Shovel";
+    public static final String COPPER_BLOCK_PICKAXE_NAME = "Copper Block Pickaxe";
+    public static final String COPPER_BLOCK_AXE_NAME = "Copper Block Axe";
+    public static final String COPPER_BLOCK_HOE_NAME = "Copper Block Hoe";
+
+    public static final String TIN_BLOCK_SWORD_NAME = "Tin Block Sword";
+    public static final String TIN_BLOCK_SHOVEL_NAME = "Tin Block Shovel";
+    public static final String TIN_BLOCK_PICKAXE_NAME = "Tin Block Pickaxe";
+    public static final String TIN_BLOCK_AXE_NAME = "Tin Block Axe";
+    public static final String TIN_BLOCK_HOE_NAME = "Tin Block Hoe";
     
     public static final String WOOD_SWORD_NAME = "Wood Sword";
     public static final String WOOD_SHOVEL_NAME = "Wood Shovel";

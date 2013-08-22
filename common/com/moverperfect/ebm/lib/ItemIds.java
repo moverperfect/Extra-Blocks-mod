@@ -32,6 +32,7 @@ public class ItemIds {
     public static int TIN_HOE_DEFAULT = 7011;
     
     public static int BLOCK_TOOLS_DEFAULT = 7012;
+    public static int BLOCK_METAL_TOOLS_DEFAULT = 7040;
 
     /* Current item ids */
     public static int FLINT_AND_STEEL;
@@ -53,5 +54,6 @@ public class ItemIds {
     public static int TIN_HOE;
     
     public static int BLOCK_TOOLS;
+    public static int BLOCK_METAL_TOOLS;
 
 }

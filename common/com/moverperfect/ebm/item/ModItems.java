@@ -10,6 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,6 +33,8 @@ public class ModItems {
     
     static EnumToolMaterial EnumToolMaterialCopper = EnumHelper.addToolMaterial("COPPER", 2, 300, 7.0F, 2, 14);
     static EnumToolMaterial EnumToolMaterialTin = EnumHelper.addToolMaterial("TIN", 2, 200, 7.5F, 2, 14);
+    static EnumToolMaterial EnumToolMaterialCopperBlock = EnumHelper.addToolMaterial("COPPER BLOCK", 2, 2700, 7.0F, 2, 14);
+    static EnumToolMaterial EnumToolMaterialTinBlock = EnumHelper.addToolMaterial("TIN BLOCK", 2, 1800, 7.5F, 2, 14);
     static EnumToolMaterial EnumToolMaterialWood = EnumHelper.addToolMaterial("WOOD", 0 , 236 , 2.0F , 0 , 15 );
     static EnumToolMaterial EnumToolMaterialStoneBrick = EnumHelper.addToolMaterial("STONE BRICK", 1 , 524 , 4.0F , 1 , 5);
     static EnumToolMaterial EnumToolMaterialIronBlock = EnumHelper.addToolMaterial("IRON BLOCK", 2 ,2250 , 6.0F , 2 , 14 );
@@ -52,6 +55,18 @@ public class ModItems {
     public static Item tinPickaxe;
     public static Item tinAxe;
     public static Item tinHoe;
+    
+    public static Item copperBlockSword;
+    public static Item copperBlockShovel;
+    public static Item copperBlockPickaxe;
+    public static Item copperBlockAxe;
+    public static Item copperBlockHoe;
+
+    public static Item tinBlockSword;
+    public static Item tinBlockShovel;
+    public static Item tinBlockPickaxe;
+    public static Item tinBlockAxe;
+    public static Item tinBlockHoe;
     
     public static Item woodBlockSword;
     public static Item woodBlockShovel;
@@ -90,14 +105,17 @@ public class ModItems {
 	public static void init() {
 		metals();
 	    metalTools();
+	    metalBlockTools();
 		blockTools();
+		
+		metalArmor();
 	}
 
     public static void micJunk() {
-        flintAndSteelBlock = new ItemFlintAndSteel(ItemIds.FLINT_AND_STEEL).setUnlocalizedName("flintandsteelblock");
+        flintAndSteelBlock = new ItemFlintAndSteel(ItemIds.FLINT_AND_STEEL).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("flintandsteelblock");
         
-        dropSap = new ItemSap(ItemIds.DROP_SAP).setUnlocalizedName("dropsap");
-        ballSap = new ItemSap(ItemIds.BALL_SAP).setUnlocalizedName("ballsap");
+        dropSap = new ItemSap(ItemIds.DROP_SAP).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("dropsap");
+        ballSap = new ItemSap(ItemIds.BALL_SAP).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("ballsap");
         
         LanguageRegistry.addName(flintAndSteelBlock, Strings.FLINT_AND_STEEL_NAME);
         
@@ -110,7 +128,9 @@ public class ModItems {
         GameRegistry.registerItem(ballSap, Strings.BALL_SAP_NAME);
         
         GameRegistry.addRecipe(new ItemStack(flintAndSteelBlock, 1), new Object[] {"A ", " B", 'A', Block.blockIron, 'B', ModBlocks.flintBlock});
+        if (ConfigurationSettings.SEEDS_BREAD) {GameRegistry.addRecipe(new ItemStack (Item.bread,2),new Object[]{"###","###","###", Character.valueOf('#'), Item.seeds});};
         
+        GameRegistry.addRecipe(new ItemStack(Block.pistonStickyBase, 1), new Object[]{"A","B", 'A', ballSap, 'B', Block.pistonStickyBase});
         GameRegistry.addShapelessRecipe(new ItemStack(ballSap,1), new Object[]{dropSap,dropSap,dropSap,dropSap});
         
         GameRegistry.addSmelting(6, new ItemStack(dropSap,1), 0.1F);
@@ -289,11 +309,11 @@ public class ModItems {
             GameRegistry.registerItem(copperAxe, Strings.COPPER_AXE_NAME);
             GameRegistry.registerItem(copperHoe, Strings.COPPER_HOE_NAME);
             
-            GameRegistry.registerItem(copperSword, Strings.TIN_SWORD_NAME);
-            GameRegistry.registerItem(copperShovel, Strings.TIN_SHOVEL_NAME);
-            GameRegistry.registerItem(copperPickaxe, Strings.TIN_PICKAXE_NAME);
-            GameRegistry.registerItem(copperAxe, Strings.TIN_AXE_NAME);
-            GameRegistry.registerItem(copperHoe, Strings.TIN_HOE_NAME);
+            GameRegistry.registerItem(tinSword, Strings.TIN_SWORD_NAME);
+            GameRegistry.registerItem(tinShovel, Strings.TIN_SHOVEL_NAME);
+            GameRegistry.registerItem(tinPickaxe, Strings.TIN_PICKAXE_NAME);
+            GameRegistry.registerItem(tinAxe, Strings.TIN_AXE_NAME);
+            GameRegistry.registerItem(tinHoe, Strings.TIN_HOE_NAME);
             
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperSword,1), new Object[]{"#","#","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
             CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperShovel), new Object[]{"#","s","s",Character.valueOf('#'), "ingotCopper", ('s'),Item.stick}));
@@ -309,5 +329,64 @@ public class ModItems {
 
 		}
 	}
+    
+    @SuppressWarnings("unchecked")
+    public static void metalBlockTools() {
+        
+        if(ConfigurationSettings.METALS && ConfigurationSettings.BLOCK_TOOLS) {
+            copperBlockSword = new ItemSword(ItemIds.BLOCK_METAL_TOOLS, EnumToolMaterialCopperBlock).setCreativeTab(CreativeTabs.tabTools).setUnlocalizedName("swordcopperblock");
+            copperBlockShovel = new ItemSpade(ItemIds.BLOCK_METAL_TOOLS+1, EnumToolMaterialCopperBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("shovelcopperblock");
+            copperBlockPickaxe = new ItemPickaxe(ItemIds.BLOCK_METAL_TOOLS+2, EnumToolMaterialCopperBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("pickaxecopperblock");
+            copperBlockAxe = new ItemAxe(ItemIds.BLOCK_METAL_TOOLS+3, EnumToolMaterialCopperBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("axecopperblock");
+            copperBlockHoe = new ItemHoe(ItemIds.BLOCK_METAL_TOOLS+4, EnumToolMaterialCopperBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("hoecopperblock");
+            
+            tinBlockSword = new ItemSword(ItemIds.BLOCK_METAL_TOOLS+5, EnumToolMaterialTinBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("swordtinblock");
+            tinBlockShovel = new ItemSpade(ItemIds.BLOCK_METAL_TOOLS+6, EnumToolMaterialTinBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("shoveltinblock");
+            tinBlockPickaxe = new ItemPickaxe(ItemIds.BLOCK_METAL_TOOLS+7, EnumToolMaterialTinBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("pickaxetinblock");
+            tinBlockAxe = new ItemAxe(ItemIds.BLOCK_METAL_TOOLS+8, EnumToolMaterialTinBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("axetinblock");
+            tinBlockHoe = new ItemHoe(ItemIds.BLOCK_METAL_TOOLS+9, EnumToolMaterialTinBlock).setCreativeTab(ExtraBlocksMain.tabsEBM).setUnlocalizedName("hoetinblock");
+            
+            LanguageRegistry.addName(copperBlockSword, Strings.COPPER_BLOCK_SWORD_NAME);
+            LanguageRegistry.addName(copperBlockShovel, Strings.COPPER_BLOCK_SHOVEL_NAME);
+            LanguageRegistry.addName(copperBlockPickaxe, Strings.COPPER_BLOCK_PICKAXE_NAME);
+            LanguageRegistry.addName(copperBlockAxe, Strings.COPPER_BLOCK_AXE_NAME);
+            LanguageRegistry.addName(copperBlockHoe, Strings.COPPER_BLOCK_HOE_NAME);
+            
+            LanguageRegistry.addName(tinBlockSword, Strings.TIN_BLOCK_SWORD_NAME);
+            LanguageRegistry.addName(tinBlockShovel, Strings.TIN_BLOCK_SHOVEL_NAME);
+            LanguageRegistry.addName(tinBlockPickaxe, Strings.TIN_BLOCK_PICKAXE_NAME);
+            LanguageRegistry.addName(tinBlockAxe, Strings.TIN_BLOCK_AXE_NAME);
+            LanguageRegistry.addName(tinBlockHoe, Strings.TIN_BLOCK_HOE_NAME);
+            
+            GameRegistry.registerItem(copperBlockSword, Strings.COPPER_BLOCK_SWORD_NAME);
+            GameRegistry.registerItem(copperBlockShovel, Strings.COPPER_BLOCK_SHOVEL_NAME);
+            GameRegistry.registerItem(copperBlockPickaxe, Strings.COPPER_BLOCK_PICKAXE_NAME);
+            GameRegistry.registerItem(copperBlockAxe, Strings.COPPER_BLOCK_AXE_NAME);
+            GameRegistry.registerItem(copperBlockHoe, Strings.COPPER_BLOCK_HOE_NAME);
+            
+            GameRegistry.registerItem(copperBlockSword, Strings.TIN_BLOCK_SWORD_NAME);
+            GameRegistry.registerItem(copperBlockShovel, Strings.TIN_BLOCK_SHOVEL_NAME);
+            GameRegistry.registerItem(copperBlockPickaxe, Strings.TIN_BLOCK_PICKAXE_NAME);
+            GameRegistry.registerItem(copperBlockAxe, Strings.TIN_BLOCK_AXE_NAME);
+            GameRegistry.registerItem(copperBlockHoe, Strings.TIN_BLOCK_HOE_NAME);
+
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlockSword,1), new Object[]{"#","#","s",Character.valueOf('#'), "blockCopper", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlockShovel), new Object[]{"#","s","s",Character.valueOf('#'), "blockCopper", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "blockCopper", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlockAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "blockCopper", ('s'), Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (copperBlockHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "blockCopper", ('s'), Item.stick}));
+            
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlockSword), new Object[]{"#","#","s",Character.valueOf('#'), "blockTin", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlockShovel), new Object[]{"#","s","s",Character.valueOf('#'), "blockTin", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlockPickaxe), new Object[]{"###"," s "," s ",Character.valueOf('#'), "blockTin", ('s'),Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlockAxe), new Object[]{"##","#s"," s",Character.valueOf('#'), "blockTin", ('s'), Item.stick}));
+            CraftingManager.getInstance().getRecipeList().add(new ShapedOreRecipe(new ItemStack (tinBlockHoe),new Object[]{"##"," s"," s",Character.valueOf('#'), "blockTin", ('s'), Item.stick}));
+        }
+    }
+    
+    public static void metalArmor() {
+        
+    }
+    
 
 }
