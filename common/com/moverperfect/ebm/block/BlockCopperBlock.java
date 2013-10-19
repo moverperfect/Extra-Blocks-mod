@@ -5,9 +5,9 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
 
 /**
- * Extra-Blocks-Mod
- * 
  * BlockCopperBlock
+ * 
+ * @project Extra-Blocks-Mod
  * 
  * @author Moverperfect
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
@@ -16,6 +16,11 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockCopperBlock extends Block {
 
+    /**
+     * Copper block object
+     * 
+     * @param par1
+     */
 	public BlockCopperBlock(int par1) {
 		super(par1, Material.iron);
 		setStepSound(soundMetalFootstep);
@@ -23,6 +28,9 @@ public class BlockCopperBlock extends Block {
 		this.setResistance(10F);
 	}
 	
+	/**
+	 * Loading the icon
+	 */
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {

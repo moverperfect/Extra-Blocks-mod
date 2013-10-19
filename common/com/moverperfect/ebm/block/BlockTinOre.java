@@ -16,6 +16,10 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockTinOre extends Block {
 
+    /**
+     * Tin ore object
+     * @param par1
+     */
 	public BlockTinOre(int par1) {
 		super(par1, Material.rock);
 		setStepSound(soundStoneFootstep);
@@ -23,6 +27,9 @@ public class BlockTinOre extends Block {
 		this.setResistance(10F);
 	}
 	
+    /**
+     * Loading the icon
+     */
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {

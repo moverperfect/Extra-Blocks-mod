@@ -26,17 +26,23 @@ import cpw.mods.fml.common.FMLLog;
 
 public class ConfigurationHandler {
 
+    // Some preparation work
     public static Configuration configuration;
     
     public static final String CATEGORY_RECIPES ="recipes"; 
 	
+    /**
+     * Loading the config file
+     * 
+     * @param configFile
+     */
 	public static void init(File configFile) {
 		configuration = new Configuration(configFile);
 
         try {
             configuration.load();
 
-            /* General configs */
+            // Configuration options
             ConfigurationSettings.DISPLAY_VERSION_RESULT = configuration.get(CATEGORY_GENERAL, ConfigurationSettings.DISPLAY_VERSION_RESULT_CONFIGNAME, ConfigurationSettings.DISPLAY_VERSION_RESULT_DEFAULT).getBoolean(ConfigurationSettings.DISPLAY_VERSION_RESULT_DEFAULT);
             ConfigurationSettings.LAST_DISCOVERED_VERSION = configuration.get(CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_CONFIGNAME, ConfigurationSettings.LAST_DISCOVERED_VERSION_DEFAULT).getString();
 
@@ -48,7 +54,7 @@ public class ConfigurationHandler {
 
             ConfigurationSettings.BLOCK_TOOLS = configuration.get(Configuration.CATEGORY_GENERAL, ConfigurationSettings.BLOCK_TOOLS_CONFIGNAME, ConfigurationSettings.BLOCK_TOOLS_DEFAULT).getBoolean(ConfigurationSettings.BLOCK_TOOLS_DEFAULT);
             
-            /* Block configs */
+            // Block ids config
             BlockIds.COPPER_ORE = configuration.getBlock(Strings.COPPER_ORE_NAME, BlockIds.COPPER_ORE_DEFAULT).getInt(BlockIds.COPPER_ORE_DEFAULT);
             BlockIds.COPPER_BLOCK = configuration.getBlock(Strings.COPPER_BLOCK_NAME, BlockIds.COPPER_BLOCK_DEFAULT).getInt(BlockIds.COPPER_BLOCK_DEFAULT);
             BlockIds.TIN_ORE = configuration.getBlock(Strings.TIN_ORE_NAME, BlockIds.TIN_ORE_DEFAULT).getInt(BlockIds.TIN_ORE_DEFAULT);
@@ -56,9 +62,10 @@ public class ConfigurationHandler {
             
             BlockIds.FLINT_BLOCK = configuration.getBlock(Strings.FLINT_BLOCK_NAME, BlockIds.FLINT_BLOCK_DEFAULT).getInt(BlockIds.FLINT_BLOCK_DEFAULT);
             
-            /* Item configs */
+            // Item ids config
             ItemIds.FLINT_AND_STEEL = configuration.getItem(Strings.FLINT_AND_STEEL_NAME,ItemIds.FLINT_AND_STEEL_DEFAULT).getInt(ItemIds.FLINT_AND_STEEL_DEFAULT);
             
+            // Copper
             ItemIds.COPPER_INGOT = configuration.getItem(Strings.COPPER_INGOT_NAME, ItemIds.COPPER_INGOT_DEFAULT).getInt(ItemIds.COPPER_INGOT_DEFAULT);
             ItemIds.COPPER_SWORD = configuration.getItem(Strings.COPPER_SWORD_NAME, ItemIds.COPPER_SWORD_DEFAULT).getInt(ItemIds.COPPER_SWORD_DEFAULT);
             ItemIds.COPPER_SHOVEL = configuration.getItem(Strings.COPPER_SHOVEL_NAME, ItemIds.COPPER_SHOVEL_DEFAULT).getInt(ItemIds.COPPER_SHOVEL_DEFAULT);
@@ -66,6 +73,7 @@ public class ConfigurationHandler {
             ItemIds.COPPER_AXE = configuration.getItem(Strings.COPPER_AXE_NAME, ItemIds.COPPER_AXE_DEFAULT).getInt(ItemIds.COPPER_AXE_DEFAULT);
             ItemIds.COPPER_HOE = configuration.getItem(Strings.COPPER_HOE_NAME, ItemIds.COPPER_HOE_DEFAULT).getInt(ItemIds.COPPER_HOE_DEFAULT);
 
+            // Tin
             ItemIds.TIN_INGOT = configuration.getItem(Strings.TIN_INGOT_NAME, ItemIds.TIN_INGOT_DEFAULT).getInt(ItemIds.TIN_INGOT_DEFAULT);
             ItemIds.TIN_SWORD = configuration.getItem(Strings.TIN_SWORD_NAME, ItemIds.TIN_SWORD_DEFAULT).getInt(ItemIds.TIN_SWORD_DEFAULT);
             ItemIds.TIN_SHOVEL = configuration.getItem(Strings.TIN_SHOVEL_NAME, ItemIds.TIN_SHOVEL_DEFAULT).getInt(ItemIds.TIN_SHOVEL_DEFAULT);
@@ -88,6 +96,13 @@ public class ConfigurationHandler {
         }
 	}
 	
+	/**
+	 * At the time of writing this comment, i have forgotten what this actually does, whoops
+	 * 
+	 * @param categoryName
+	 * @param propertyName
+	 * @param newValue
+	 */
 	public static void set(String categoryName, String propertyName, String newValue) {
 
         configuration.load();

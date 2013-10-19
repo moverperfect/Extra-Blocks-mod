@@ -16,6 +16,10 @@ import net.minecraft.client.renderer.texture.IconRegister;
 
 public class BlockTinBlock extends Block {
 
+    /**
+     * Tin block object
+     * @param par1
+     */
 	public BlockTinBlock(int par1) {
 		super(par1, Material.iron);
 		setStepSound(soundMetalFootstep);
@@ -23,6 +27,9 @@ public class BlockTinBlock extends Block {
 		this.setResistance(10F);
 	}
 	
+    /**
+     * Loading the icon
+     */
     @Override
     public void registerIcons(IconRegister par1IconRegister)
     {
