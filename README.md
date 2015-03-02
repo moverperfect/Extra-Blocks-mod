@@ -13,7 +13,11 @@
 </ul></p>
 
 <p>Updates: 
-<p>0.4.0 <a href="http://adfoc.us/10571813808946">Download: 1.4.5</a> <p>  </p> <a href="http://adfoc.us/10571815686842">Download: 1.4.6</a></p></p></p>
+<p>0.4.0-2 <a href="http://adfoc.us/10571815688306">Download: 1.5.1</a></p>
+	<ul>
+		<li>Updated to 1.5.1</li>
+	</ul>
+<p>0.4.0 <a href="http://adfoc.us/10571813808946">Download: 1.4.5</a></p> <p><a href="http://adfoc.us/10571815686842">Download: 1.4.6</a></p>
 	<ul>
 	<li>Added 'Block' tools</li>
 	<li>Bug fixes</li>
