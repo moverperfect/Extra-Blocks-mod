@@ -2,7 +2,7 @@ package com.moverperfect.ebm.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 
 /**
  * BlockCopperBlock
@@ -32,7 +32,7 @@ public class BlockCopperBlock extends Block {
 	 * Loading the icon
 	 */
     @Override
-    public void registerIcons(IconRegister par1IconRegister)
+    public void registerBlockIcons(IIconRegister par1IconRegister)
     {
         this.blockIcon = par1IconRegister.registerIcon("ebm:" + this.getUnlocalizedName().substring(5));
     }
